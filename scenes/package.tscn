@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://db373j0806c6e"]
+
+[ext_resource type="Script" path="res://scripts/package.gd" id="1_i7anl"]
+
+[node name="Package" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_i7anl")

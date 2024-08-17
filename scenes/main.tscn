@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bk0js8v3gucjc"]
+
+[ext_resource type="PackedScene" uid="uid://cqdlrf3yxqqxe" path="res://scenes/order_view.tscn" id="1_1t2ka"]
+[ext_resource type="PackedScene" uid="uid://bbtes5hegqpon" path="res://scenes/package_bay.tscn" id="2_m0fga"]
+[ext_resource type="PackedScene" uid="uid://dnq2b2n763kot" path="res://scenes/catalog.tscn" id="3_thx5f"]
+[ext_resource type="PackedScene" uid="uid://caev248wf8syf" path="res://scenes/weigh_station.tscn" id="4_l46aa"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Order View" parent="." instance=ExtResource("1_1t2ka")]
+layout_mode = 1
+
+[node name="Package Bay" parent="." instance=ExtResource("2_m0fga")]
+layout_mode = 1
+
+[node name="Catalog" parent="." instance=ExtResource("3_thx5f")]
+layout_mode = 1
+
+[node name="Weigh Station" parent="." instance=ExtResource("4_l46aa")]
+layout_mode = 1
