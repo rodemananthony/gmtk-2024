@@ -1,9 +1,8 @@
 extends Node2D
 
-@onready var enemy = preload("res://scenes/Main/package.tscn")
+@onready var package_scene: PackedScene = preload("res://scenes/Main/package.tscn")
 
 func _on_timer_timeout() -> void:
-	var ene = enemy.instantiate()
-	ene.position = position
-	get_parent().get_node("res://scenes/Main/package.tscn").add_child(ene)
+	var new_package = package_scene.instantiate()
+	get_parent().add_child(new_package)
 	
