@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b7fl5jhm140vv"]
+
+[ext_resource type="Texture2D" uid="uid://cvc76b078v11q" path="res://Images/Phone.png" id="1_d24he"]
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_g1vpk"]
+
+[resource]
+script = ExtResource("1_g1vpk")
+image = ExtResource("1_d24he")
+name = "Cellphone"
+weight = 140.0

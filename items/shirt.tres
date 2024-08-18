@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b7ref8rrcv7d"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cqf5ba0lkjci2"]
 
 [ext_resource type="Texture2D" uid="uid://8yii0d0ns0fj" path="res://Images/Shirt.png" id="1_t5dg2"]
 [ext_resource type="Script" path="res://scripts/item.gd" id="2_vpder"]
@@ -7,4 +7,4 @@
 script = ExtResource("2_vpder")
 image = ExtResource("1_t5dg2")
 name = "Shirt"
-weight = 999.0
+weight = 113.0

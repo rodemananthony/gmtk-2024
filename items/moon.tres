@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cs1yocks1cemn"]
+
+[ext_resource type="Texture2D" uid="uid://btnxes3ktlsc0" path="res://Images/Moon.png" id="1_dkne2"]
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_v8e48"]
+
+[resource]
+script = ExtResource("1_v8e48")
+image = ExtResource("1_dkne2")
+name = "Moon"
+weight = 7.35e+25

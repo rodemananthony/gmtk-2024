@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bmcv77rrx1vc1"]
+
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_h2bqa"]
+[ext_resource type="Texture2D" uid="uid://dfrtvwogu7gp8" path="res://Images/Paperclip box.png" id="1_ymkmn"]
+
+[resource]
+script = ExtResource("1_h2bqa")
+image = ExtResource("1_ymkmn")
+name = "Box of Paperclips"
+weight = 15.0

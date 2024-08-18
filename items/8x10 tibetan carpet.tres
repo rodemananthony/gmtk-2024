@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bwaxnwuxp4cyd"]
+
+[ext_resource type="Texture2D" uid="uid://38pc1mhr1k3t" path="res://Images/8x10 Tibetan Carpet.png" id="1_gc2px"]
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_qb73x"]
+
+[resource]
+script = ExtResource("1_qb73x")
+image = ExtResource("1_gc2px")
+name = "8x10 Tibetan Carpet"
+weight = 22000.0

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://fcdyl6kkppk8"]
+
+[ext_resource type="Texture2D" uid="uid://dlnuyvcf78o4h" path="res://Images/Sun.png" id="1_c4iik"]
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_uqove"]
+
+[resource]
+script = ExtResource("1_uqove")
+image = ExtResource("1_c4iik")
+name = "Sun"
+weight = 1.9891e+33
