@@ -7,19 +7,25 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="drop_zone" parent="." instance=ExtResource("2_qouc2")]
-position = Vector2(922, 144)
+position = Vector2(203, 197)
 
 [node name="drop_zone2" parent="." instance=ExtResource("2_qouc2")]
-position = Vector2(358, 413)
+position = Vector2(761, 403)
 
 [node name="Package" parent="." instance=ExtResource("1_f4mcy")]
 offset_left = 201.0
-offset_top = 179.0
+offset_top = 178.0
 offset_right = 201.0
-offset_bottom = 179.0
+offset_bottom = 178.0
 
 [node name="Scale" type="Sprite2D" parent="."]
 visibility_layer = 513
-position = Vector2(360, 546)
+position = Vector2(763, 525)
+scale = Vector2(1.0875, 1.0875)
+texture = ExtResource("3_ouh64")
+
+[node name="Scale2" type="Sprite2D" parent="."]
+visibility_layer = 513
+position = Vector2(201, 318)
 scale = Vector2(1.0875, 1.0875)
 texture = ExtResource("3_ouh64")
