@@ -1,6 +1,10 @@
+class_name CatalogItem
 extends Control
 
-@export var item: Item
+var item: ProgressItem
+
+func _init(item: ProgressItem):
+	self.item = item
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
