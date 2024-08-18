@@ -92,9 +92,9 @@ autoplay = true
 
 [node name="HSlider" type="HSlider" parent="AudioStreamPlayer"]
 offset_left = 37.0
-offset_top = 564.0
+offset_top = 618.0
 offset_right = 258.0
-offset_bottom = 688.0
+offset_bottom = 634.0
 min_value = -30.0
 max_value = 0.0
 
