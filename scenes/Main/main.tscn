@@ -24,6 +24,7 @@ layout_mode = 1
 layout_mode = 1
 
 [node name="Catalog" parent="." instance=ExtResource("3_thx5f")]
+unique_name_in_owner = true
 layout_mode = 1
 
 [node name="Weigh Station" parent="." instance=ExtResource("4_l46aa")]
