@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bk0js8v3gucjc"]
+[gd_scene load_steps=10 format=3 uid="uid://bk0js8v3gucjc"]
 
 [ext_resource type="PackedScene" uid="uid://cqdlrf3yxqqxe" path="res://scenes/Main/order_view.tscn" id="1_1t2ka"]
 [ext_resource type="PackedScene" uid="uid://bbtes5hegqpon" path="res://scenes/Main/package_bay.tscn" id="2_m0fga"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://wa1r55dgff6s" path="res://scenes/Main/order_manager.tscn" id="6_ic6p0"]
 [ext_resource type="PackedScene" uid="uid://b37i8ur6wdpr2" path="res://scenes/Main/catalog_manager.tscn" id="7_22og6"]
 [ext_resource type="PackedScene" uid="uid://d2djly0crknho" path="res://scenes/Main/package_manager.tscn" id="8_klat7"]
+[ext_resource type="PackedScene" uid="uid://bfqy5on0o4r3p" path="res://scenes/PauseMenu.tscn" id="9_5pq8p"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -28,6 +29,10 @@ layout_mode = 1
 
 [node name="Weigh Station" parent="." instance=ExtResource("4_l46aa")]
 layout_mode = 1
+offset_left = -1.0
+offset_top = -1.0
+offset_right = -1.0
+offset_bottom = -1.0
 
 [node name="Game Manager" parent="." instance=ExtResource("5_eoty8")]
 
@@ -36,3 +41,12 @@ layout_mode = 1
 [node name="Catalog Manager" parent="Game Manager" instance=ExtResource("7_22og6")]
 
 [node name="Package Manager" parent="Game Manager" instance=ExtResource("8_klat7")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("9_5pq8p")]
+light_mask = 2
+visibility_layer = 2
+layout_mode = 1
+offset_left = 296.0
+offset_top = 185.0
+offset_right = -321.0
+offset_bottom = -387.0
