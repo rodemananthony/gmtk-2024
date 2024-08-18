@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://i3ptxu4bre5c"]
+
+[ext_resource type="Texture2D" uid="uid://38pc1mhr1k3t" path="res://Images/8x10 Tibetan Carpet.png" id="1_cqdbq"]
+
+[node name="Level" type="Node2D"]
+process_mode = 1
+
+[node name="8x10TibetanCarpet" type="Sprite2D" parent="."]
+position = Vector2(578, 306)
+scale = Vector2(0.031311, 0.0197144)
+texture = ExtResource("1_cqdbq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(578, 323)
