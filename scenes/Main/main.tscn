@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bk0js8v3gucjc"]
 
-[ext_resource type="PackedScene" uid="uid://cqdlrf3yxqqxe" path="res://scenes/Scene 1/order_view.tscn" id="1_1t2ka"]
-[ext_resource type="PackedScene" uid="uid://bbtes5hegqpon" path="res://scenes/Scene 1/package_bay.tscn" id="2_m0fga"]
-[ext_resource type="PackedScene" uid="uid://dnq2b2n763kot" path="res://scenes/Scene 1/catalog.tscn" id="3_thx5f"]
-[ext_resource type="PackedScene" uid="uid://caev248wf8syf" path="res://scenes/Scene 1/weigh_station.tscn" id="4_l46aa"]
+[ext_resource type="PackedScene" uid="uid://cqdlrf3yxqqxe" path="res://scenes/Main/order_view.tscn" id="1_1t2ka"]
+[ext_resource type="PackedScene" uid="uid://bbtes5hegqpon" path="res://scenes/Main/package_bay.tscn" id="2_m0fga"]
+[ext_resource type="PackedScene" uid="uid://dnq2b2n763kot" path="res://scenes/Main/catalog.tscn" id="3_thx5f"]
+[ext_resource type="PackedScene" uid="uid://caev248wf8syf" path="res://scenes/Main/weigh_station.tscn" id="4_l46aa"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
