@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://b37i8ur6wdpr2"]
+[gd_scene load_steps=2 format=3 uid="uid://b37i8ur6wdpr2"]
+
+[ext_resource type="Script" path="res://scripts/catalog_manager.gd" id="1_ii5uv"]
 
 [node name="Catalog Manager" type="Node"]
+script = ExtResource("1_ii5uv")
