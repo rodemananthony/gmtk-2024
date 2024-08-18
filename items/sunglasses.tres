@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://dgrhwy1bp2nwn"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dgrhwy1bp2nwn"]
 
 [ext_resource type="Script" path="res://scripts/item.gd" id="1_kwk2b"]
+[ext_resource type="Texture2D" uid="uid://drdortis2q2ip" path="res://Images/Sunglasses 2.png" id="1_u1t3x"]
 
 [resource]
 script = ExtResource("1_kwk2b")
+image = ExtResource("1_u1t3x")
 name = "Sunglasses"
 weight = 0.0
