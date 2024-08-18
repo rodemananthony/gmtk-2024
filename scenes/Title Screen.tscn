@@ -1,9 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://cc47ti5t6e3cl"]
+[gd_scene load_steps=7 format=3 uid="uid://cc47ti5t6e3cl"]
 
-[ext_resource type="Texture2D" uid="uid://c67tj720y6maj" path="res://Images/TempBackground.jpg" id="1_7ix0o"]
+[ext_resource type="Texture2D" uid="uid://b3sc5wnq4wbdd" path="res://Images/background_image.png" id="1_4ryyo"]
 [ext_resource type="Script" path="res://scripts/TitleScreen.gd" id="1_arrd7"]
 [ext_resource type="FontFile" uid="uid://dkc3hmqkqqgpg" path="res://Fonts/grandstander_5.0.20/webfonts/grandstander-vietnamese-900-normal.woff2" id="2_ojhlj"]
 [ext_resource type="FontFile" uid="uid://dsw2bohjkl05b" path="res://Fonts/grandstander_5.0.20/webfonts/grandstander-latin-500-italic.woff" id="4_isqtv"]
+[ext_resource type="AudioStream" uid="uid://b4t1c1ssj5rio" path="res://Sounds/Title Screen BGM.wav" id="5_3c5m7"]
+
+[sub_resource type="GDScript" id="GDScript_6blhl"]
+script/source = "extends HSlider
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -15,10 +30,10 @@ offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TempBackground" type="Sprite2D" parent="."]
-position = Vector2(577, 324)
-scale = Vector2(2.43038, 2.42857)
-texture = ExtResource("1_7ix0o")
+[node name="BackgroundImage2" type="Sprite2D" parent="."]
+position = Vector2(575, 323)
+scale = Vector2(2.24609, 2.52344)
+texture = ExtResource("1_4ryyo")
 
 [node name="StartButton" type="Button" parent="."]
 visibility_layer = 512
@@ -32,8 +47,8 @@ theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0.654902, 0.290196, 0, 1)
-theme_override_colors/font_outline_color = Color(0.964706, 0, 0, 1)
+theme_override_colors/font_color = Color(0.686275, 0.321569, 0.0117647, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
@@ -57,7 +72,7 @@ theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0.654902, 0.290196, 0, 1)
+theme_override_colors/font_color = Color(0.686275, 0.321569, 0.0117647, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
@@ -73,17 +88,45 @@ script = ExtResource("1_arrd7")
 [node name="Title" type="Label" parent="."]
 visibility_layer = 512
 layout_mode = 0
-offset_left = 250.0
-offset_top = 70.0
-offset_right = 900.0
-offset_bottom = 207.0
-theme_override_colors/font_color = Color(0.654528, 0.290467, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+offset_left = 61.0
+offset_top = 129.0
+offset_right = 754.0
+offset_bottom = 266.0
+theme_override_colors/font_color = Color(0.685744, 0.319698, 0.0129001, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_isqtv")
 theme_override_font_sizes/font_size = 100
-text = "Working Title"
+text = "Package Panic"
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_3c5m7")
+volume_db = -10.591
+autoplay = true
+
+[node name="HSlider" type="HSlider" parent="AudioStreamPlayer"]
+offset_left = 37.0
+offset_top = 564.0
+offset_right = 258.0
+offset_bottom = 688.0
+min_value = -30.0
+max_value = 0.0
+script = SubResource("GDScript_6blhl")
+
+[node name="Volume" type="Label" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 590.0
+offset_right = 129.0
+offset_bottom = 618.0
+theme_override_colors/font_color = Color(0.686275, 0.321569, 0.0117647, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ojhlj")
+theme_override_font_sizes/font_size = 20
+text = "Volume: "
 
 [connection signal="pressed" from="StartButton" to="StartButton" method="_on_StartButton_pressed"]
 [connection signal="pressed" from="Quit" to="Quit" method="_on_Quit_pressed"]
+[connection signal="value_changed" from="AudioStreamPlayer/HSlider" to="StartButton" method="_on_h_slider_value_changed"]
