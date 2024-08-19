@@ -1,0 +1,126 @@
+[gd_scene load_steps=15 format=3 uid="uid://cjrhiovqt27w7"]
+
+[ext_resource type="Texture2D" uid="uid://bpa54vkhyijrw" path="res://Images/warehouse_backdrop.png" id="1_y5a7p"]
+[ext_resource type="PackedScene" uid="uid://cculdmypdq4ml" path="res://scenes/package_shelf.tscn" id="2_nnjw6"]
+[ext_resource type="Texture2D" uid="uid://br2iik76llj5t" path="res://Images/Scale.png" id="3_hkfdm"]
+[ext_resource type="Texture2D" uid="uid://drdortis2q2ip" path="res://Images/Sunglasses 2.png" id="4_54llk"]
+[ext_resource type="PackedScene" uid="uid://dyo41ud1e4ueu" path="res://scenes/Main/drop_zone.tscn" id="4_m2g3c"]
+[ext_resource type="Texture2D" uid="uid://btnxes3ktlsc0" path="res://Images/Moon.png" id="5_3hpxl"]
+[ext_resource type="PackedScene" uid="uid://db373j0806c6e" path="res://scenes/Main/package.tscn" id="5_tpgw3"]
+[ext_resource type="Texture2D" uid="uid://t6xmwlf5qorf" path="res://Images/TV.png" id="6_46tt1"]
+[ext_resource type="Texture2D" uid="uid://dlnuyvcf78o4h" path="res://Images/Sun.png" id="7_k08gg"]
+[ext_resource type="Texture2D" uid="uid://38pc1mhr1k3t" path="res://Images/8x10 Tibetan Carpet.png" id="8_i8j8p"]
+[ext_resource type="Texture2D" uid="uid://8yii0d0ns0fj" path="res://Images/Shirt.png" id="9_xyqpa"]
+[ext_resource type="Texture2D" uid="uid://cvc76b078v11q" path="res://Images/Phone.png" id="10_rf5u5"]
+[ext_resource type="Texture2D" uid="uid://dfrtvwogu7gp8" path="res://Images/Paperclip box.png" id="11_ewlur"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xm3o0"]
+
+[node name="FinalTest" type="Node2D"]
+
+[node name="WarehouseBackdrop" type="Sprite2D" parent="."]
+position = Vector2(290.75, 240)
+scale = Vector2(3.62812, 3)
+texture = ExtResource("1_y5a7p")
+
+[node name="Shelf" parent="WarehouseBackdrop" instance=ExtResource("2_nnjw6")]
+position = Vector2(-2.34544, 6.70833)
+scale = Vector2(0.698569, 0.724479)
+
+[node name="WarehouseBackdrop2" type="Sprite2D" parent="."]
+position = Vector2(292.125, 562.5)
+scale = Vector2(3.62344, 1.04375)
+texture = ExtResource("1_y5a7p")
+
+[node name="Scale" type="Sprite2D" parent="WarehouseBackdrop2"]
+position = Vector2(-3.17266, 25.3893)
+scale = Vector2(0.222087, 0.5)
+texture = ExtResource("3_hkfdm")
+
+[node name="Drop Zone" parent="WarehouseBackdrop2/Scale" instance=ExtResource("4_m2g3c")]
+position = Vector2(-2.02441, -120.719)
+scale = Vector2(1.24267, 1.91617)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WarehouseBackdrop2/Scale/Drop Zone"]
+shape = SubResource("CircleShape2D_xm3o0")
+
+[node name="WarehouseBackdrop3" type="Sprite2D" parent="."]
+position = Vector2(863, 563)
+scale = Vector2(3.69297, 1.04375)
+texture = ExtResource("1_y5a7p")
+
+[node name="Sunglasses2" type="Sprite2D" parent="WarehouseBackdrop3"]
+position = Vector2(-54.157, -30.6588)
+scale = Vector2(0.00449545, 0.0148531)
+texture = ExtResource("4_54llk")
+
+[node name="Sunglasses3" type="Sprite2D" parent="WarehouseBackdrop3"]
+position = Vector2(-54.157, 31.6167)
+scale = Vector2(0.0719933, 0.23762)
+texture = ExtResource("5_3hpxl")
+
+[node name="Tv" type="Sprite2D" parent="WarehouseBackdrop3"]
+position = Vector2(-13.8101, -30.6588)
+scale = Vector2(0.00453843, 0.0148122)
+texture = ExtResource("6_46tt1")
+
+[node name="Sun" type="Sprite2D" parent="WarehouseBackdrop3"]
+position = Vector2(-34.1189, -30.6588)
+scale = Vector2(0.00450815, 0.0149046)
+texture = ExtResource("7_k08gg")
+
+[node name="Sun2" type="Sprite2D" parent="WarehouseBackdrop3"]
+position = Vector2(-34.1189, 32.5748)
+scale = Vector2(0.00450815, 0.0149046)
+texture = ExtResource("8_i8j8p")
+
+[node name="Shirt" type="Sprite2D" parent="WarehouseBackdrop3"]
+position = Vector2(6.76961, -30.6588)
+scale = Vector2(0.00451198, 0.0147654)
+texture = ExtResource("9_xyqpa")
+
+[node name="Shirt2" type="Sprite2D" parent="WarehouseBackdrop3"]
+position = Vector2(27.62, -30.6587)
+scale = Vector2(0.00451198, 0.0147654)
+texture = ExtResource("10_rf5u5")
+
+[node name="Shirt3" type="Sprite2D" parent="WarehouseBackdrop3"]
+position = Vector2(48.1997, -30.6587)
+scale = Vector2(0.00451198, 0.0147654)
+texture = ExtResource("11_ewlur")
+
+[node name="Package" parent="." instance=ExtResource("5_tpgw3")]
+offset_left = 206.0
+offset_top = 57.0
+offset_right = 206.0
+offset_bottom = 57.0
+
+[node name="Package2" parent="." instance=ExtResource("5_tpgw3")]
+offset_left = 348.0
+offset_top = 361.0
+offset_right = 348.0
+offset_bottom = 361.0
+
+[node name="Package3" parent="." instance=ExtResource("5_tpgw3")]
+offset_left = 206.0
+offset_top = 360.0
+offset_right = 206.0
+offset_bottom = 360.0
+
+[node name="Package4" parent="." instance=ExtResource("5_tpgw3")]
+offset_left = 344.0
+offset_top = 208.0
+offset_right = 344.0
+offset_bottom = 208.0
+
+[node name="Package5" parent="." instance=ExtResource("5_tpgw3")]
+offset_left = 206.0
+offset_top = 206.0
+offset_right = 206.0
+offset_bottom = 206.0
+
+[node name="Package6" parent="." instance=ExtResource("5_tpgw3")]
+offset_left = 346.0
+offset_top = 55.0
+offset_right = 346.0
+offset_bottom = 55.0

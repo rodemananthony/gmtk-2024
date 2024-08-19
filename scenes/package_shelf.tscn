@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://cculdmypdq4ml"]
+
+[ext_resource type="Texture2D" uid="uid://bdqjpjor844q6" path="res://Images/pixil-frame-0.png" id="1_pcegk"]
+[ext_resource type="PackedScene" uid="uid://dyo41ud1e4ueu" path="res://scenes/Main/drop_zone.tscn" id="2_hmps1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0rqnb"]
+
+[node name="Shelf" type="Sprite2D"]
+position = Vector2(586, 373)
+scale = Vector2(2.73125, 3.3875)
+texture = ExtResource("1_pcegk")
+
+[node name="MR" parent="." groups=["zone"] instance=ExtResource("2_hmps1")]
+position = Vector2(24.5309, -16.5314)
+scale = Vector2(0.366133, 0.295203)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MR"]
+shape = SubResource("CircleShape2D_0rqnb")
+
+[node name="ML" parent="." groups=["zone"] instance=ExtResource("2_hmps1")]
+position = Vector2(-31.4874, -16.5314)
+scale = Vector2(0.366133, 0.295203)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ML"]
+shape = SubResource("CircleShape2D_0rqnb")
+
+[node name="BL" parent="." groups=["zone"] instance=ExtResource("2_hmps1")]
+position = Vector2(-31.4874, 53.7269)
+scale = Vector2(0.366133, 0.295203)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BL"]
+shape = SubResource("CircleShape2D_0rqnb")
+
+[node name="BR" parent="." groups=["zone"] instance=ExtResource("2_hmps1")]
+position = Vector2(24.5309, 53.7269)
+scale = Vector2(0.366133, 0.295203)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BR"]
+shape = SubResource("CircleShape2D_0rqnb")
+
+[node name="TL" parent="." groups=["zone"] instance=ExtResource("2_hmps1")]
+position = Vector2(-31.4874, -87.6753)
+scale = Vector2(0.366133, 0.295203)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TL"]
+shape = SubResource("CircleShape2D_0rqnb")
+
+[node name="TR" parent="." groups=["zone"] instance=ExtResource("2_hmps1")]
+position = Vector2(24.5309, -87.6753)
+scale = Vector2(0.366133, 0.295203)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TR"]
+shape = SubResource("CircleShape2D_0rqnb")

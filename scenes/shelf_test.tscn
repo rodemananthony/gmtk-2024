@@ -1,66 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://csov74dlg3kwq"]
+[gd_scene load_steps=3 format=3 uid="uid://csov74dlg3kwq"]
 
-[ext_resource type="Texture2D" uid="uid://bdqjpjor844q6" path="res://Images/pixil-frame-0.png" id="1_jnkag"]
-[ext_resource type="PackedScene" uid="uid://dyo41ud1e4ueu" path="res://scenes/Main/drop_zone.tscn" id="3_2dr2e"]
+[ext_resource type="PackedScene" uid="uid://cculdmypdq4ml" path="res://scenes/package_shelf.tscn" id="1_w4316"]
 [ext_resource type="PackedScene" uid="uid://l86h71p2dj6h" path="res://scenes/package_spawner.tscn" id="4_jc72a"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_0rqnb"]
 
 [node name="ShelfTest" type="Node"]
 
-[node name="Shelf" type="Sprite2D" parent="."]
-position = Vector2(586, 373)
-scale = Vector2(2.73125, 3.3875)
-texture = ExtResource("1_jnkag")
-
-[node name="Starting Point" parent="Shelf" instance=ExtResource("3_2dr2e")]
-position = Vector2(-104.348, 60.8118)
-scale = Vector2(0.366133, 0.295203)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Shelf/Starting Point"]
-shape = SubResource("CircleShape2D_0rqnb")
-
-[node name="MR" parent="Shelf" instance=ExtResource("3_2dr2e")]
-position = Vector2(24.5309, -16.5314)
-scale = Vector2(0.366133, 0.295203)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Shelf/MR"]
-shape = SubResource("CircleShape2D_0rqnb")
-
-[node name="ML" parent="Shelf" instance=ExtResource("3_2dr2e")]
-position = Vector2(-31.4874, -16.5314)
-scale = Vector2(0.366133, 0.295203)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Shelf/ML"]
-shape = SubResource("CircleShape2D_0rqnb")
-
-[node name="BL" parent="Shelf" instance=ExtResource("3_2dr2e")]
-position = Vector2(-31.4874, 53.7269)
-scale = Vector2(0.366133, 0.295203)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Shelf/BL"]
-shape = SubResource("CircleShape2D_0rqnb")
-
-[node name="BR" parent="Shelf" instance=ExtResource("3_2dr2e")]
-position = Vector2(24.5309, 53.7269)
-scale = Vector2(0.366133, 0.295203)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Shelf/BR"]
-shape = SubResource("CircleShape2D_0rqnb")
-
-[node name="TL" parent="Shelf" instance=ExtResource("3_2dr2e")]
-position = Vector2(-31.4874, -87.6753)
-scale = Vector2(0.366133, 0.295203)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Shelf/TL"]
-shape = SubResource("CircleShape2D_0rqnb")
-
-[node name="TR" parent="Shelf" instance=ExtResource("3_2dr2e")]
-position = Vector2(24.5309, -87.6753)
-scale = Vector2(0.366133, 0.295203)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Shelf/TR"]
-shape = SubResource("CircleShape2D_0rqnb")
+[node name="Shelf" parent="." instance=ExtResource("1_w4316")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 326)
