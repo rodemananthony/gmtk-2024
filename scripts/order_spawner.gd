@@ -16,4 +16,4 @@ func _on_timer_timeout() -> void:
 		if x == order_position_length - 1:
 			new_order.set_position(order_positions[x])
 			order_positions.remove_at(x)
-	add_child(new_order)
+			add_child(new_order)

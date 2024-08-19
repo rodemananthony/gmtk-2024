@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://fgh1e0prlvk8"]
+[gd_scene load_steps=13 format=3 uid="uid://fgh1e0prlvk8"]
 
 [ext_resource type="PackedScene" path="res://scenes/Main/catalog_manager.tscn" id="1_2ery5"]
 [ext_resource type="PackedScene" uid="uid://dnq2b2n763kot" path="res://scenes/Main/catalog.tscn" id="2_riswo"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dyo41ud1e4ueu" path="res://scenes/Main/drop_zone.tscn" id="4_f3114"]
 [ext_resource type="Texture2D" uid="uid://br2iik76llj5t" path="res://Images/Scale.png" id="5_xgktk"]
 [ext_resource type="Script" path="res://scripts/scale_manager.gd" id="6_87ykf"]
+[ext_resource type="PackedScene" uid="uid://7h0xoltr88by" path="res://scenes/Main/order_spawner.tscn" id="7_w5ey1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_veel5"]
 
@@ -71,6 +72,8 @@ position = Vector2(0, -80)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Drop Zone5"]
 shape = SubResource("CircleShape2D_lqg1a")
+
+[node name="order_spawner" parent="." instance=ExtResource("7_w5ey1")]
 
 [connection signal="catalog_items" from="Catalog Manager" to="package_spawner" method="_on_catalog_manager_catalog_items"]
 [connection signal="package_captured" from="Sprite2D/Drop Zone5" to="Sprite2D" method="_on_drop_zone_5_package_captured"]
