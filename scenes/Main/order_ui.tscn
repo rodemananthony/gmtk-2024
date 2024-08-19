@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcsrf3ub407rc"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ar7aj"]
+size = Vector2(100, 100)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hhx8w"]
+font_size = 11
+
+[node name="order_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(76.9999, 32)
+scale = Vector2(1.54, 0.64)
+texture = SubResource("PlaceholderTexture2D_ar7aj")
+
+[node name="NameLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 7.0
+offset_right = 103.0
+offset_bottom = 23.0
+text = "[Name]"
+label_settings = SubResource("LabelSettings_hhx8w")
+
+[node name="WeightLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 36.0
+offset_right = 103.0
+offset_bottom = 52.0
+text = "[Weight]"
+label_settings = SubResource("LabelSettings_hhx8w")

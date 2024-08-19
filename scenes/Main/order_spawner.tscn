@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://7h0xoltr88by"]
+
+[ext_resource type="PackedScene" uid="uid://bcsrf3ub407rc" path="res://scenes/Main/order_ui.tscn" id="1_5fwpm"]
+[ext_resource type="Script" path="res://scripts/order_spawner.gd" id="1_q8yj8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2bj1w"]
+size = Vector2(219, 635)
+
+[node name="order_spawner" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1035.5, 324.5)
+shape = SubResource("RectangleShape2D_2bj1w")
+script = ExtResource("1_q8yj8")
+
+[node name="Timer" type="Timer" parent="CollisionShape2D"]
+wait_time = 5.0
+autostart = true
+
+[node name="order_ui" parent="CollisionShape2D" instance=ExtResource("1_5fwpm")]
+visible = false
+offset_left = -89.5
+offset_top = -298.5
+offset_right = -89.5
+offset_bottom = -298.5
+
+[node name="order_ui2" parent="CollisionShape2D" instance=ExtResource("1_5fwpm")]
+visible = false
+offset_left = -89.5
+offset_top = -198.5
+offset_right = -89.5
+offset_bottom = -198.5
+
+[node name="order_ui3" parent="CollisionShape2D" instance=ExtResource("1_5fwpm")]
+visible = false
+offset_left = -89.5
+offset_top = -98.5
+offset_right = -89.5
+offset_bottom = -98.5
+
+[node name="order_ui4" parent="CollisionShape2D" instance=ExtResource("1_5fwpm")]
+visible = false
+offset_left = -89.5
+offset_top = 1.5
+offset_right = -89.5
+offset_bottom = 1.5
+
+[node name="order_ui5" parent="CollisionShape2D" instance=ExtResource("1_5fwpm")]
+visible = false
+offset_left = -89.5
+offset_top = 101.5
+offset_right = -89.5
+offset_bottom = 101.5
+
+[connection signal="timeout" from="CollisionShape2D/Timer" to="CollisionShape2D" method="_on_timer_timeout"]
