@@ -1,12 +1,12 @@
 extends CollisionShape2D
 
 @onready var order_ui : PackedScene = preload("res://scenes/Main/order_ui.tscn")
-var order_position_one = Vector2(-89.5,-298.5)
-var order_position_two = Vector2(-89.5,-298.5 + 100)
-var order_position_three = Vector2(-89.5,-298.5 + 200)
-var order_position_four = Vector2(-89.5,-298.5 + 300)
-var order_position_five = Vector2(-89.5,-298.5 + 400)
-var order_positions : Array = [order_position_five, order_position_four, order_position_three, order_position_two, order_position_one]
+var order_position_one = Vector2(-89.5 + 77,-298.5 + 32)
+var order_position_two = Vector2(-89.5 + 77,-298.5 + 100 + 32)
+var order_position_three = Vector2(-89.5 + 77,-298.5 + 200 + 32)
+var order_position_four = Vector2(-89.5 + 77,-298.5 + 300 + 32)
+var order_position_five = Vector2(-89.5 + 77,-298.5 + 400 + 32)
+var order_positions : Array = [order_position_one, order_position_two, order_position_three, order_position_four, order_position_five]
 
 var usable_catalog : Array = []
 var complete_catalog : Array = []
@@ -37,11 +37,9 @@ func _on_timer_timeout() -> void:
 			order_weight_label.set("text", item_weight)
 			#print(order_label)
 			
-			for y in order_position_length:
-				if y == order_position_length - 1:
-					new_order.set_position(order_positions[y])
-					order_positions.remove_at(y)
-					add_child(new_order)
+			new_order.set_position(order_positions[0])
+			order_positions.remove_at(0)
+			add_child(new_order)
 
 
 func _on_order_spawner_usable_catalog(current_catalog: Array) -> void:

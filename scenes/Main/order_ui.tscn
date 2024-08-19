@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcsrf3ub407rc"]
+[gd_scene load_steps=6 format=3 uid="uid://bcsrf3ub407rc"]
 
+[ext_resource type="Script" path="res://scenes/Main/order_ui_connector.gd" id="1_iudvu"]
 [ext_resource type="PackedScene" uid="uid://dyo41ud1e4ueu" path="res://scenes/Main/drop_zone.tscn" id="1_lgnke"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ar7aj"]
@@ -18,6 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_iudvu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.54, 0.64)
@@ -45,3 +47,5 @@ offset_right = 17.9998
 offset_bottom = 22.0
 text = "[Weight]"
 label_settings = SubResource("LabelSettings_hhx8w")
+
+[connection signal="package_captured" from="Drop Zone" to="." method="_on_drop_zone_package_captured"]

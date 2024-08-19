@@ -33,4 +33,5 @@ func _input(event: InputEvent) -> void:
 						current_drop_zone.vacate()
 					# update to new drop zone
 					current_drop_zone = drop_candidate
-					rest_point = drop_candidate.global_position
+					if drop_candidate != null:
+						rest_point = drop_candidate.global_position
