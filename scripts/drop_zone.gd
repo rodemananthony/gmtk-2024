@@ -11,8 +11,7 @@ var captured_package: Package = null
 		
 func _draw() -> void:
 	if show_debug:
-		var area_radius = get_child(0).shape.radius
-		draw_circle(Vector2.ZERO, area_radius, Color.DARK_TURQUOISE)
+		(get_child(0).shape as Shape2D).draw(get_canvas_item(), Color.DARK_TURQUOISE)
 	
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	var receiver: Package = _get_valid_receiver(area)

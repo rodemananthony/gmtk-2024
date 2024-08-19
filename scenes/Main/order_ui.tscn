@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://dyo41ud1e4ueu" path="res://scenes/Main/drop_zone.tscn" id="1_lgnke"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kykxp"]
-radius = 34.5579
-
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ar7aj"]
 size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34auu"]
+size = Vector2(152, 63)
 
 [sub_resource type="LabelSettings" id="LabelSettings_hhx8w"]
 font_size = 11
@@ -19,32 +19,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Drop Zone" parent="." instance=ExtResource("1_lgnke")]
-position = Vector2(16.0001, 36)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Zone"]
-position = Vector2(-1.5, -4)
-shape = SubResource("CircleShape2D_kykxp")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(77, 32)
 scale = Vector2(1.54, 0.64)
 texture = SubResource("PlaceholderTexture2D_ar7aj")
 
+[node name="Drop Zone" parent="." instance=ExtResource("1_lgnke")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Zone"]
+shape = SubResource("RectangleShape2D_34auu")
+
 [node name="NameLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 16.0002
-offset_top = 7.0
-offset_right = 103.0
-offset_bottom = 23.0
+offset_left = -69.0
+offset_top = -23.0
+offset_right = 17.9998
+offset_bottom = -7.0
 text = "[Name]"
 label_settings = SubResource("LabelSettings_hhx8w")
 
 [node name="WeightLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 16.0002
-offset_top = 36.0
-offset_right = 103.0
-offset_bottom = 52.0
+offset_left = -69.0
+offset_top = 6.0
+offset_right = 17.9998
+offset_bottom = 22.0
 text = "[Weight]"
 label_settings = SubResource("LabelSettings_hhx8w")
