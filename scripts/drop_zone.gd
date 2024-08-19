@@ -39,12 +39,13 @@ func collect_package(package: Package) -> bool:
 		return false
 		
 	captured_package = package
-	package_captured.emit(Package)
+	emit_signal("package_captured", captured_package)
 	return true
 
 func vacate() -> bool:
 	var had_package := is_occupied()
 	captured_package = null
+	emit_signal("package_captured", captured_package)
 	return had_package
 
 func is_occupied() -> bool:

@@ -1,0 +1,76 @@
+[gd_scene load_steps=12 format=3 uid="uid://fgh1e0prlvk8"]
+
+[ext_resource type="PackedScene" path="res://scenes/Main/catalog_manager.tscn" id="1_2ery5"]
+[ext_resource type="PackedScene" uid="uid://dnq2b2n763kot" path="res://scenes/Main/catalog.tscn" id="2_riswo"]
+[ext_resource type="PackedScene" uid="uid://l86h71p2dj6h" path="res://scenes/package_spawner.tscn" id="3_undrl"]
+[ext_resource type="PackedScene" uid="uid://dyo41ud1e4ueu" path="res://scenes/Main/drop_zone.tscn" id="4_f3114"]
+[ext_resource type="Texture2D" uid="uid://br2iik76llj5t" path="res://Images/Scale.png" id="5_xgktk"]
+[ext_resource type="Script" path="res://scripts/scale_manager.gd" id="6_87ykf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_veel5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aa8lm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_72k0v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sx34l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lqg1a"]
+
+[node name="catalog_test" type="Node2D"]
+
+[node name="Catalog Manager" parent="." instance=ExtResource("1_2ery5")]
+
+[node name="Catalog" parent="." instance=ExtResource("2_riswo")]
+unique_name_in_owner = true
+offset_left = 178.0
+offset_top = 352.0
+offset_right = 178.0
+offset_bottom = 352.0
+
+[node name="package_spawner" parent="." instance=ExtResource("3_undrl")]
+position = Vector2(133, 381)
+
+[node name="Drop Zone" parent="." instance=ExtResource("4_f3114")]
+position = Vector2(583, 170)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Zone"]
+shape = SubResource("CircleShape2D_veel5")
+
+[node name="Drop Zone2" parent="." instance=ExtResource("4_f3114")]
+position = Vector2(778, 163)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Zone2"]
+shape = SubResource("CircleShape2D_aa8lm")
+
+[node name="Drop Zone3" parent="." instance=ExtResource("4_f3114")]
+position = Vector2(586, 330)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Zone3"]
+shape = SubResource("CircleShape2D_72k0v")
+
+[node name="Drop Zone4" parent="." instance=ExtResource("4_f3114")]
+position = Vector2(793, 323)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Zone4"]
+shape = SubResource("CircleShape2D_sx34l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(477, 567)
+texture = ExtResource("5_xgktk")
+script = ExtResource("6_87ykf")
+
+[node name="WeightLabel" type="Label" parent="Sprite2D"]
+offset_left = -477.0
+offset_top = -567.0
+offset_right = -437.0
+offset_bottom = -544.0
+
+[node name="Drop Zone5" parent="Sprite2D" instance=ExtResource("4_f3114")]
+position = Vector2(0, -80)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Drop Zone5"]
+shape = SubResource("CircleShape2D_lqg1a")
+
+[connection signal="catalog_items" from="Catalog Manager" to="package_spawner" method="_on_catalog_manager_catalog_items"]
+[connection signal="package_captured" from="Sprite2D/Drop Zone5" to="Sprite2D" method="_on_drop_zone_5_package_captured"]

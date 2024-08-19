@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://cjrhiovqt27w7"]
+[gd_scene load_steps=23 format=3 uid="uid://cjrhiovqt27w7"]
 
 [ext_resource type="Texture2D" uid="uid://bpa54vkhyijrw" path="res://Images/warehouse_backdrop.png" id="1_y5a7p"]
 [ext_resource type="PackedScene" uid="uid://cculdmypdq4ml" path="res://scenes/package_shelf.tscn" id="2_nnjw6"]
 [ext_resource type="Texture2D" uid="uid://br2iik76llj5t" path="res://Images/Scale.png" id="3_hkfdm"]
+[ext_resource type="Script" path="res://scripts/scale_manager.gd" id="4_5lsep"]
 [ext_resource type="Texture2D" uid="uid://drdortis2q2ip" path="res://Images/Sunglasses 2.png" id="4_54llk"]
 [ext_resource type="PackedScene" uid="uid://dyo41ud1e4ueu" path="res://scenes/Main/drop_zone.tscn" id="4_m2g3c"]
 [ext_resource type="Texture2D" uid="uid://btnxes3ktlsc0" path="res://Images/Moon.png" id="5_3hpxl"]
@@ -19,6 +20,7 @@
 [ext_resource type="Resource" uid="uid://bmcv77rrx1vc1" path="res://items/paper_clip_box.tres" id="17_qjcww"]
 [ext_resource type="Resource" uid="uid://3v2mqc3gx3f7" path="res://items/television.tres" id="18_ofk50"]
 [ext_resource type="Resource" uid="uid://cqf5ba0lkjci2" path="res://items/shirt.tres" id="19_2jpx8"]
+[ext_resource type="PackedScene" uid="uid://c5n0ps6tn3j2f" path="res://scenes/Main/scale_display.tscn" id="20_a6y34"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xm3o0"]
 
@@ -42,6 +44,14 @@ texture = ExtResource("1_y5a7p")
 position = Vector2(-3.17266, 25.3893)
 scale = Vector2(0.222087, 0.5)
 texture = ExtResource("3_hkfdm")
+script = ExtResource("4_5lsep")
+
+[node name="WeightLabel" parent="WarehouseBackdrop2/Scale" instance=ExtResource("20_a6y34")]
+offset_left = -250.558
+offset_top = -134.132
+offset_right = -210.558
+offset_bottom = -111.132
+script = null
 
 [node name="Drop Zone" parent="WarehouseBackdrop2/Scale" instance=ExtResource("4_m2g3c")]
 position = Vector2(-2.02441, -120.719)
@@ -137,3 +147,5 @@ offset_top = 55.0
 offset_right = 346.0
 offset_bottom = 55.0
 contents = ExtResource("19_2jpx8")
+
+[connection signal="package_captured" from="WarehouseBackdrop2/Scale/Drop Zone" to="WarehouseBackdrop2/Scale" method="_on_drop_zone_package_captured"]

@@ -10,6 +10,8 @@ const SUN = preload("res://items/sun.tres")
 const SUNGLASSES = preload("res://items/sunglasses.tres")
 const TELEVISION = preload("res://items/television.tres")
 
+signal catalog_items (catalog:Array)
+
 ## Dictionary of items added in each "page" of the catalog. 
 ## Can't nest Arrays in Arrays so this is a workaround 
 const CATALOG_PAGES: Dictionary = {
@@ -28,6 +30,7 @@ var page := 0
 
 func _ready() -> void:
 	_add_page_inner(page)
+	emit_signal("catalog_items", current_catalog)
 
 func add_next_page() -> void:
 	# Check if there are any more pages
@@ -37,6 +40,7 @@ func add_next_page() -> void:
 	
 	page += 1
 	_add_page_inner(page)
+	emit_signal("catalog_items", current_catalog)
 
 func _add_page_inner(page_number: int) -> void:
 	# Should be Array[Item], typing system can't handle that
