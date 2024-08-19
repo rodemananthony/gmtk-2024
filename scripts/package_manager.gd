@@ -5,4 +5,3 @@ extends Node2D
 func _on_timer_timeout() -> void:
 	var new_package = package_scene.instantiate()
 	get_parent().add_child(new_package)
-	
