@@ -3,8 +3,9 @@ extends Control
 
 var item: ProgressItem
 
-func _init(item: ProgressItem):
+func with_data(item: ProgressItem):
 	self.item = item
+	return self
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

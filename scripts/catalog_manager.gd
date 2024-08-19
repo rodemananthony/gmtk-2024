@@ -18,6 +18,7 @@ const CATALOG_PAGES: Dictionary = {
 	2: [CELLPHONE, TELEVISION]
 }
 
+const CATALOG_ITEM_SCENE: PackedScene = preload("res://scenes/Main/catalog_item.tscn")
 
 var current_catalog: Array[ProgressItem] = []
 
@@ -45,4 +46,6 @@ func _add_page_inner(page_number: int) -> void:
 		var converted_item := ProgressItem.new(item)
 		
 		current_catalog.append(converted_item)
-		catalog_view.add_child(CatalogItem.new(converted_item))
+		
+		var new_catalog_item_view = CATALOG_ITEM_SCENE.instantiate().with_data(converted_item)
+		catalog_view.add_child(new_catalog_item_view)
