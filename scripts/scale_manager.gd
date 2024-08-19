@@ -15,6 +15,6 @@ func _on_drop_zone_5_package_captured(package: Package) -> void:
 		var packageWeight = package.contents.weight
 		var packageName = package.contents.name
 		$WeightLabel.text = str(packageWeight)
-		print(packageName,': ',packageWeight)
+		#print(packageName,': ',packageWeight)
 	else:
 		$WeightLabel.text = "0"

@@ -25,11 +25,11 @@ func _on_timer_timeout() -> void:
 		var new_package = package_scene.instantiate()
 		new_package.set("contents", item_info)
 		get_parent().add_child(new_package)
-		print(new_package.contents.weight)
+		#print(new_package.contents.weight)
 	
 
 
 func _on_catalog_manager_catalog_items(catalog: Array) -> void:
 	complete_catalog = catalog
 	current_catalog = catalog
-	print(current_catalog)
+	#print(current_catalog)
