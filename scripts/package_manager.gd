@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var package_scene: PackedScene = preload("res://scenes/Main/package.tscn")
+@onready var package_scene: PackedScene = preload("res://scenes/main/package.tscn")
 
 var current_catalog : Array = []
 var complete_catalog : Array = []

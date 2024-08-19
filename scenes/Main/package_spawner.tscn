@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://l86h71p2dj6h"]
+[gd_scene load_steps=2 format=3 uid="uid://beoj7bs2avqsf"]
 
 [ext_resource type="Script" path="res://scripts/package_manager.gd" id="1_wjvyg"]
 

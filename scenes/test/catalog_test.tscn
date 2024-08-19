@@ -1,12 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://fgh1e0prlvk8"]
+[gd_scene load_steps=13 format=3 uid="uid://bbetjodb22cey"]
 
-[ext_resource type="Script" path="res://scripts/scale_manager.gd" id="6_87ykf"]
 [ext_resource type="PackedScene" uid="uid://b37i8ur6wdpr2" path="res://scenes/main/catalog_manager.tscn" id="1_qay8a"]
 [ext_resource type="PackedScene" uid="uid://dnq2b2n763kot" path="res://scenes/main/catalog.tscn" id="2_ni8lp"]
-[ext_resource type="PackedScene" uid="uid://l86h71p2dj6h" path="res://scenes/main/package_spawner.tscn" id="3_kng24"]
+[ext_resource type="PackedScene" uid="uid://beoj7bs2avqsf" path="res://scenes/main/package_spawner.tscn" id="3_yutxk"]
 [ext_resource type="PackedScene" uid="uid://dyo41ud1e4ueu" path="res://scenes/main/drop_zone.tscn" id="4_fnyxk"]
 [ext_resource type="Texture2D" uid="uid://br2iik76llj5t" path="res://Images/Scale.png" id="5_7uq4q"]
-[ext_resource type="PackedScene" uid="uid://7h0xoltr88by" path="res://scenes/main/order_spawner.tscn" id="7_n4g5i"]
+[ext_resource type="Script" path="res://scripts/scale_manager.gd" id="6_fyehm"]
+[ext_resource type="PackedScene" uid="uid://7h0xoltr88by" path="res://scenes/main/order_spawner.tscn" id="7_rv2km"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_veel5"]
 
@@ -29,8 +29,7 @@ offset_top = 352.0
 offset_right = 178.0
 offset_bottom = 352.0
 
-[node name="package_spawner" parent="." instance=ExtResource("3_kng24")]
-position = Vector2(133, 381)
+[node name="package_spawner" parent="." instance=ExtResource("3_yutxk")]
 
 [node name="Drop Zone" parent="." instance=ExtResource("4_fnyxk")]
 position = Vector2(583, 170)
@@ -59,7 +58,7 @@ shape = SubResource("CircleShape2D_sx34l")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(477, 567)
 texture = ExtResource("5_7uq4q")
-script = ExtResource("6_yx8i7")
+script = ExtResource("6_fyehm")
 
 [node name="WeightLabel" type="Label" parent="Sprite2D"]
 offset_left = -477.0
@@ -73,8 +72,8 @@ position = Vector2(0, -80)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Drop Zone5"]
 shape = SubResource("CircleShape2D_lqg1a")
 
-[node name="order_spawner" parent="." instance=ExtResource("7_n4g5i")]
+[node name="order_spawner" parent="." instance=ExtResource("7_rv2km")]
 
-[connection signal="catalog_items" from="Catalog Manager" to="package_spawner" method="_on_catalog_manager_catalog_items"]
 [connection signal="catalog_items" from="Catalog Manager" to="order_spawner" method="_on_catalog_manager_catalog_items"]
+[connection signal="catalog_items" from="Catalog Manager" to="package_spawner" method="_on_catalog_manager_catalog_items"]
 [connection signal="package_captured" from="Sprite2D/Drop Zone5" to="Sprite2D" method="_on_drop_zone_5_package_captured"]
