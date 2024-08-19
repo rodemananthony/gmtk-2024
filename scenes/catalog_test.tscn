@@ -76,4 +76,5 @@ shape = SubResource("CircleShape2D_lqg1a")
 [node name="order_spawner" parent="." instance=ExtResource("7_w5ey1")]
 
 [connection signal="catalog_items" from="Catalog Manager" to="package_spawner" method="_on_catalog_manager_catalog_items"]
+[connection signal="catalog_items" from="Catalog Manager" to="order_spawner" method="_on_catalog_manager_catalog_items"]
 [connection signal="package_captured" from="Sprite2D/Drop Zone5" to="Sprite2D" method="_on_drop_zone_5_package_captured"]

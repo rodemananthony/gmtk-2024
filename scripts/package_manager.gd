@@ -18,7 +18,8 @@ func _on_timer_timeout() -> void:
 		if x == item:
 			current_item = current_catalog[x]
 			current_catalog.remove_at(x)
-	
+			#print(current_catalog)
+			#print(complete_catalog)
 	
 	if current_item != null:
 		var item_info = current_item.get("item")
@@ -30,6 +31,6 @@ func _on_timer_timeout() -> void:
 
 
 func _on_catalog_manager_catalog_items(catalog: Array) -> void:
-	complete_catalog = catalog
-	current_catalog = catalog
+	complete_catalog = catalog.duplicate()
+	current_catalog = catalog.duplicate()
 	#print(current_catalog)
