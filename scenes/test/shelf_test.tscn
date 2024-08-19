@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://csov74dlg3kwq"]
 
-[ext_resource type="PackedScene" uid="uid://cculdmypdq4ml" path="res://scenes/package_shelf.tscn" id="1_w4316"]
-[ext_resource type="PackedScene" uid="uid://l86h71p2dj6h" path="res://scenes/package_spawner.tscn" id="4_jc72a"]
+[ext_resource type="PackedScene" uid="uid://cculdmypdq4ml" path="res://scenes/main/package_shelf.tscn" id="1_w4316"]
+[ext_resource type="PackedScene" uid="uid://l86h71p2dj6h" path="res://scenes/main/package_spawner.tscn" id="4_jc72a"]
 
 [node name="ShelfTest" type="Node"]
 

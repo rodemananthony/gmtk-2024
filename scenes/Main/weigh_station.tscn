@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://caev248wf8syf"]
 
-[ext_resource type="PackedScene" uid="uid://c6modyof825xi" path="res://scenes/Main/scale.tscn" id="1_nfiej"]
+[ext_resource type="PackedScene" uid="uid://c6modyof825xi" path="res://scenes/main/scale.tscn" id="1_nfiej"]
 
 [node name="Weigh Station" type="Control"]
 layout_mode = 3
