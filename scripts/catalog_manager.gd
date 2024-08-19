@@ -20,7 +20,7 @@ const CATALOG_PAGES: Dictionary = {
 	2: [CELLPHONE, TELEVISION]
 }
 
-const CATALOG_ITEM_SCENE: PackedScene = preload("res://scenes/Main/catalog_item.tscn")
+const CATALOG_ITEM_SCENE: PackedScene = preload("res://scenes/main/catalog_item.tscn")
 
 var current_catalog: Array[ProgressItem] = []
 

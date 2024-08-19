@@ -1,6 +1,6 @@
 extends CollisionShape2D
 
-@onready var order_ui : PackedScene = preload("res://scenes/Main/order_ui.tscn")
+@onready var order_ui : PackedScene = preload("res://scenes/main/order_ui.tscn")
 var order_position_one = Vector2(-89.5 + 77,-298.5 + 32)
 var order_position_two = Vector2(-89.5 + 77,-298.5 + 100 + 32)
 var order_position_three = Vector2(-89.5 + 77,-298.5 + 200 + 32)
