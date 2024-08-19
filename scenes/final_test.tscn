@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cjrhiovqt27w7"]
+[gd_scene load_steps=21 format=3 uid="uid://cjrhiovqt27w7"]
 
 [ext_resource type="Texture2D" uid="uid://bpa54vkhyijrw" path="res://Images/warehouse_backdrop.png" id="1_y5a7p"]
 [ext_resource type="PackedScene" uid="uid://cculdmypdq4ml" path="res://scenes/package_shelf.tscn" id="2_nnjw6"]
@@ -13,6 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://8yii0d0ns0fj" path="res://Images/Shirt.png" id="9_xyqpa"]
 [ext_resource type="Texture2D" uid="uid://cvc76b078v11q" path="res://Images/Phone.png" id="10_rf5u5"]
 [ext_resource type="Texture2D" uid="uid://dfrtvwogu7gp8" path="res://Images/Paperclip box.png" id="11_ewlur"]
+[ext_resource type="Resource" uid="uid://fcdyl6kkppk8" path="res://items/sun.tres" id="14_6xtv4"]
+[ext_resource type="Resource" uid="uid://bwaxnwuxp4cyd" path="res://items/8x10 tibetan carpet.tres" id="15_hmlwd"]
+[ext_resource type="Resource" uid="uid://dgrhwy1bp2nwn" path="res://items/sunglasses.tres" id="16_0yta7"]
+[ext_resource type="Resource" uid="uid://bmcv77rrx1vc1" path="res://items/paper_clip_box.tres" id="17_qjcww"]
+[ext_resource type="Resource" uid="uid://3v2mqc3gx3f7" path="res://items/television.tres" id="18_ofk50"]
+[ext_resource type="Resource" uid="uid://cqf5ba0lkjci2" path="res://items/shirt.tres" id="19_2jpx8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xm3o0"]
 
@@ -42,6 +48,7 @@ position = Vector2(-2.02441, -120.719)
 scale = Vector2(1.24267, 1.91617)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WarehouseBackdrop2/Scale/Drop Zone"]
+position = Vector2(1.00003, -7)
 shape = SubResource("CircleShape2D_xm3o0")
 
 [node name="WarehouseBackdrop3" type="Sprite2D" parent="."]
@@ -89,38 +96,44 @@ position = Vector2(48.1997, -30.6587)
 scale = Vector2(0.00451198, 0.0147654)
 texture = ExtResource("11_ewlur")
 
-[node name="Package" parent="." instance=ExtResource("5_tpgw3")]
+[node name="package_sun" parent="." instance=ExtResource("5_tpgw3")]
 offset_left = 206.0
 offset_top = 57.0
 offset_right = 206.0
 offset_bottom = 57.0
+contents = ExtResource("14_6xtv4")
 
-[node name="Package2" parent="." instance=ExtResource("5_tpgw3")]
+[node name="package_carpet" parent="." instance=ExtResource("5_tpgw3")]
 offset_left = 348.0
 offset_top = 361.0
 offset_right = 348.0
 offset_bottom = 361.0
+contents = ExtResource("15_hmlwd")
 
-[node name="Package3" parent="." instance=ExtResource("5_tpgw3")]
+[node name="package_sunglasses" parent="." instance=ExtResource("5_tpgw3")]
 offset_left = 206.0
 offset_top = 360.0
 offset_right = 206.0
 offset_bottom = 360.0
+contents = ExtResource("16_0yta7")
 
-[node name="Package4" parent="." instance=ExtResource("5_tpgw3")]
+[node name="package_paperclip" parent="." instance=ExtResource("5_tpgw3")]
 offset_left = 344.0
 offset_top = 208.0
 offset_right = 344.0
 offset_bottom = 208.0
+contents = ExtResource("17_qjcww")
 
-[node name="Package5" parent="." instance=ExtResource("5_tpgw3")]
+[node name="package_tv" parent="." instance=ExtResource("5_tpgw3")]
 offset_left = 206.0
 offset_top = 206.0
 offset_right = 206.0
 offset_bottom = 206.0
+contents = ExtResource("18_ofk50")
 
-[node name="Package6" parent="." instance=ExtResource("5_tpgw3")]
+[node name="package_shirt" parent="." instance=ExtResource("5_tpgw3")]
 offset_left = 346.0
 offset_top = 55.0
 offset_right = 346.0
 offset_bottom = 55.0
+contents = ExtResource("19_2jpx8")
