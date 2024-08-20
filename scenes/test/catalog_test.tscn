@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bbetjodb22cey"]
+[gd_scene load_steps=14 format=3 uid="uid://bbetjodb22cey"]
 
 [ext_resource type="PackedScene" uid="uid://b37i8ur6wdpr2" path="res://scenes/main/catalog_manager.tscn" id="1_qay8a"]
 [ext_resource type="Script" path="res://scripts/catalog_test.gd" id="1_st85p"]
@@ -14,10 +14,6 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_veel5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aa8lm"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_72k0v"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_sx34l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lqg1a"]
 
@@ -52,18 +48,6 @@ position = Vector2(778, 163)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Zone2"]
 shape = SubResource("CircleShape2D_aa8lm")
-
-[node name="Drop Zone3" parent="." instance=ExtResource("4_fnyxk")]
-position = Vector2(586, 330)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Zone3"]
-shape = SubResource("CircleShape2D_72k0v")
-
-[node name="Drop Zone4" parent="." instance=ExtResource("4_fnyxk")]
-position = Vector2(793, 323)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Zone4"]
-shape = SubResource("CircleShape2D_sx34l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(477, 567)

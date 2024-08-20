@@ -40,6 +40,9 @@ func _on_timer_timeout() -> void:
 				new_package.set_dropzone(drop_zone)
 				#print(new_package.set_dropzone(drop_zone))
 				break
+		if new_package.current_drop_zone == null:
+			print("Game Over")
+			
 		#print(new_package.contents.weight)
 	
 
