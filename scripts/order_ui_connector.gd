@@ -8,6 +8,7 @@ func _ready() -> void:
 	if self.get_tree() != null:
 		weight_label = self.get_child(3)
 		weight_needed = float(weight_label.text)
+		humanize_weight()
 		#print(weight_needed)
 
 
@@ -30,3 +31,18 @@ func _on_drop_zone_package_captured(package: Package) -> void:
 		#print(package_weight)
 		
 		self.queue_free()
+
+func humanize_weight():
+	# Only do this if expected weight has been set
+	if weight_label == null or is_zero_approx(weight_needed):
+		return
+	
+	var significand: float = weight_needed
+	var new_label: String = str(significand) + "g"
+	if significand >= 1000: # only do something special for anything 1000 grams or more
+		var power_of_ten := floorf(log(significand)/log(10))
+		significand /= 10.0 ** power_of_ten
+		new_label = "%.2fe%dg" % [significand, int(power_of_ten)]
+	
+	weight_label.text = new_label
+	
