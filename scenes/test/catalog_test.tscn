@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bbetjodb22cey"]
+[gd_scene load_steps=15 format=3 uid="uid://bbetjodb22cey"]
 
 [ext_resource type="PackedScene" uid="uid://b37i8ur6wdpr2" path="res://scenes/main/catalog_manager.tscn" id="1_qay8a"]
 [ext_resource type="Script" path="res://scripts/catalog_test.gd" id="1_st85p"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://br2iik76llj5t" path="res://Images/Scale.png" id="5_7uq4q"]
 [ext_resource type="Script" path="res://scripts/scale_manager.gd" id="6_fyehm"]
 [ext_resource type="PackedScene" uid="uid://7h0xoltr88by" path="res://scenes/main/order_spawner.tscn" id="7_rv2km"]
+[ext_resource type="PackedScene" uid="uid://bt5wo1hpuybfy" path="res://scenes/main/game_over.tscn" id="11_0wpbv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_veel5"]
 
@@ -92,6 +93,12 @@ position = Vector2(0, -80)
 shape = SubResource("CircleShape2D_lqg1a")
 
 [node name="order_spawner" parent="." instance=ExtResource("7_rv2km")]
+
+[node name="Game Over" parent="." instance=ExtResource("11_0wpbv")]
+unique_name_in_owner = true
+visible = false
+top_level = true
+position = Vector2(377, 219)
 
 [connection signal="catalog_items" from="Catalog Manager" to="package_spawner" method="_on_catalog_manager_catalog_items"]
 [connection signal="catalog_items" from="Catalog Manager" to="order_spawner" method="_on_catalog_manager_catalog_items"]

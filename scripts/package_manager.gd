@@ -9,6 +9,8 @@ var current_catalog : Array = []
 var complete_catalog : Array = []
 var catalog_check : Array = []
 
+@onready var game_over: Node2D = %"Game Over"
+
 func _ready() -> void:
 	for x in len(get_parent().get_children()):
 		var node = get_parent().get_child(x)
@@ -44,6 +46,7 @@ func _on_timer_timeout() -> void:
 				break
 		if new_package.current_drop_zone == null:
 			print("Game Over")
+			game_over.visible = true
 			
 		#print(new_package.contents.weight)
 	
