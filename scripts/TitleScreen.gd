@@ -3,7 +3,7 @@ extends Control
 
 func _on_StartButton_pressed() -> void:
 	#Start button redirects to the main scene on press
-	get_tree().change_scene_to_file("res://scenes/shelf_test.tscn")
+	get_tree().change_scene_to_file("res://scenes/test/catalog_test.tscn")
 
 
 

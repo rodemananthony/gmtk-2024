@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cc47ti5t6e3cl"]
+[gd_scene load_steps=5 format=3 uid="uid://cc47ti5t6e3cl"]
 
 [ext_resource type="Texture2D" uid="uid://b3sc5wnq4wbdd" path="res://Images/background_image.png" id="1_4ryyo"]
 [ext_resource type="Script" path="res://scripts/TitleScreen.gd" id="1_arrd7"]
-[ext_resource type="FontFile" uid="uid://dkc3hmqkqqgpg" path="res://Fonts/grandstander_5.0.20/webfonts/grandstander-vietnamese-900-normal.woff2" id="2_ojhlj"]
-[ext_resource type="FontFile" uid="uid://dsw2bohjkl05b" path="res://Fonts/grandstander_5.0.20/webfonts/grandstander-latin-500-italic.woff" id="4_isqtv"]
-[ext_resource type="AudioStream" uid="uid://b4t1c1ssj5rio" path="res://Sounds/Title Screen BGM.wav" id="5_3c5m7"]
+[ext_resource type="FontFile" uid="uid://c3dp3iioy5ff3" path="res://Fonts/grandstander_5.0.20/ttf/grandstander-latin-900-normal.ttf" id="3_sfngf"]
+[ext_resource type="FontFile" uid="uid://sed201pbsvle" path="res://Fonts/grandstander_5.0.20/ttf/grandstander-latin-500-italic.ttf" id="4_lp2ne"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -42,7 +41,7 @@ theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_ojhlj")
+theme_override_fonts/font = ExtResource("3_sfngf")
 theme_override_font_sizes/font_size = 35
 text = "Start"
 
@@ -66,7 +65,7 @@ theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ojhlj")
+theme_override_fonts/font = ExtResource("3_sfngf")
 theme_override_font_sizes/font_size = 35
 text = "Quit"
 
@@ -80,21 +79,16 @@ offset_bottom = 266.0
 theme_override_colors/font_color = Color(0.685744, 0.319698, 0.0129001, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("4_isqtv")
+theme_override_fonts/font = ExtResource("4_lp2ne")
 theme_override_font_sizes/font_size = 100
 text = "Package Panic"
 horizontal_alignment = 1
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_3c5m7")
-volume_db = -10.591
-autoplay = true
-
-[node name="HSlider" type="HSlider" parent="AudioStreamPlayer"]
+[node name="HSlider" type="HSlider" parent="."]
 offset_left = 37.0
-offset_top = 618.0
+offset_top = 617.0
 offset_right = 258.0
-offset_bottom = 634.0
+offset_bottom = 633.0
 min_value = -30.0
 max_value = 0.0
 
@@ -107,10 +101,10 @@ offset_bottom = 618.0
 theme_override_colors/font_color = Color(0.686275, 0.321569, 0.0117647, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ojhlj")
+theme_override_fonts/font = ExtResource("3_sfngf")
 theme_override_font_sizes/font_size = 20
 text = "Volume: "
 
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
-[connection signal="value_changed" from="AudioStreamPlayer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]

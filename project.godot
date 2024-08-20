@@ -10,10 +10,18 @@ config_version=5
 
 [application]
 
-config/name="GMTK 2024"
+config/name="Package Panic"
 run/main_scene="res://scenes/Title Screen.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+BackgroundMusic="*res://scenes/background_music.tscn"
+
+[display]
+
+window/size/resizable=false
 
 [input]
 
