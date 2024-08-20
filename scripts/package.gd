@@ -26,12 +26,15 @@ func _input(event: InputEvent) -> void:
 		if event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
 			selected = false
 			if drop_candidate != null:
-				var success := drop_candidate.collect_package(self)
-				if success:
-					# evacuate old drop zone
-					if current_drop_zone != null:
-						current_drop_zone.vacate()
-					# update to new drop zone
-					current_drop_zone = drop_candidate
-					if drop_candidate != null:
-						rest_point = drop_candidate.global_position
+				set_dropzone(drop_candidate)
+
+func set_dropzone (dropzone: DropZone):
+	var success := dropzone.collect_package(self)
+	if success:
+		# evacuate old drop zone
+		if current_drop_zone != null:
+			current_drop_zone.vacate()
+		# update to new drop zone
+		current_drop_zone = dropzone
+		rest_point = dropzone.global_position
+		drop_candidate = null

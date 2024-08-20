@@ -2,11 +2,17 @@ extends Node2D
 
 @onready var package_scene: PackedScene = preload("res://scenes/main/package.tscn")
 
+
+var drop_zones : Array = []
 var current_catalog : Array = []
 var complete_catalog : Array = []
 
 func _ready() -> void:
-	pass
+	for x in len(get_parent().get_children()):
+		var node = get_parent().get_child(x)
+		if node.has_method("vacate"):
+			drop_zones.append(node)
+	#print(drop_zones)
 
 func _on_timer_timeout() -> void:
 	var catalog_length = len(current_catalog)
@@ -26,6 +32,14 @@ func _on_timer_timeout() -> void:
 		var new_package = package_scene.instantiate()
 		new_package.set("contents", item_info)
 		get_parent().add_child(new_package)
+		for x in len(drop_zones):
+			#print(drop_zones[x].is_occupied())
+			if drop_zones[x].is_occupied() == false:
+				var drop_zone : DropZone = drop_zones[x]
+				#print(drop_zone)
+				new_package.set_dropzone(drop_zone)
+				#print(new_package.set_dropzone(drop_zone))
+				break
 		#print(new_package.contents.weight)
 	
 
