@@ -1,9 +1,30 @@
-[gd_scene format=3 uid="uid://dnq2b2n763kot"]
+[gd_scene load_steps=2 format=3 uid="uid://dnq2b2n763kot"]
+
+[ext_resource type="Script" path="res://scripts/catalog.gd" id="1_4772t"]
 
 [node name="Catalog" type="Control"]
+clip_contents = true
 layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_4772t")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 3.0
+offset_top = -26.0
+offset_right = 62.0
+offset_bottom = -3.0
+text = "Catalog
+"
+
+[node name="Catalog Grid" type="HFlowContainer" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 387.0
+offset_bottom = 309.0
 grow_horizontal = 2
 grow_vertical = 2

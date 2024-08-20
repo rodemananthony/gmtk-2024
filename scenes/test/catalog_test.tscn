@@ -21,20 +21,10 @@
 [node name="catalog_test" type="Node2D"]
 script = ExtResource("1_st85p")
 
-[node name="Catalog Manager" parent="." instance=ExtResource("1_qay8a")]
-unique_name_in_owner = true
-
 [node name="score_counter" parent="." instance=ExtResource("3_rswq6")]
 offset_top = 33.0
 offset_bottom = 33.0
 script = ExtResource("4_haxf1")
-
-[node name="Catalog" parent="." instance=ExtResource("2_ni8lp")]
-unique_name_in_owner = true
-offset_left = 178.0
-offset_top = 352.0
-offset_right = 178.0
-offset_bottom = 352.0
 
 [node name="package_spawner" parent="." instance=ExtResource("3_yutxk")]
 
@@ -84,6 +74,7 @@ offset_left = -477.0
 offset_top = -567.0
 offset_right = -437.0
 offset_bottom = -544.0
+theme_override_font_sizes/font_size = 26
 text = "Weight: 0"
 
 [node name="Drop Zone5" parent="Sprite2D" instance=ExtResource("4_fnyxk")]
@@ -94,15 +85,26 @@ shape = SubResource("CircleShape2D_lqg1a")
 
 [node name="order_spawner" parent="." instance=ExtResource("7_rv2km")]
 
+[node name="Catalog" parent="." instance=ExtResource("2_ni8lp")]
+unique_name_in_owner = true
+visible = false
+offset_left = 10.0
+offset_top = 99.0
+offset_right = 320.0
+offset_bottom = 481.0
+
+[node name="Catalog Manager" parent="." instance=ExtResource("1_qay8a")]
+unique_name_in_owner = true
+
 [node name="Game Over" parent="." instance=ExtResource("11_0wpbv")]
 unique_name_in_owner = true
 visible = false
 top_level = true
 position = Vector2(377, 219)
 
-[connection signal="catalog_items" from="Catalog Manager" to="package_spawner" method="_on_catalog_manager_catalog_items"]
-[connection signal="catalog_items" from="Catalog Manager" to="order_spawner" method="_on_catalog_manager_catalog_items"]
 [connection signal="package_captured" from="Sprite2D/Drop Zone5" to="Sprite2D" method="_on_drop_zone_5_package_captured"]
 [connection signal="catalog_to_choose_from" from="order_spawner" to="package_spawner" method="_on_order_spawner_catalog_to_choose_from"]
 [connection signal="display_score" from="order_spawner" to="score_counter" method="_on_order_spawner_display_score"]
 [connection signal="package_info" from="order_spawner" to="package_spawner" method="_on_order_spawner_package_info"]
+[connection signal="catalog_items" from="Catalog Manager" to="package_spawner" method="_on_catalog_manager_catalog_items"]
+[connection signal="catalog_items" from="Catalog Manager" to="order_spawner" method="_on_catalog_manager_catalog_items"]
