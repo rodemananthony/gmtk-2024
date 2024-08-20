@@ -3,6 +3,7 @@ extends Area2D
 signal usable_catalog (current_catalog:Array)
 
 var current_catalog : Array = []
+
 var complete_catalog : Array = []
 var order_catalog : Array = []
 var package_catalog : Array = []
@@ -50,6 +51,7 @@ func add_wrong_order(package:Package, ui_position:Vector2, ui_weight: float):
 func _on_catalog_manager_catalog_items(catalog: Array) -> void:
 	complete_catalog = catalog.duplicate()
 	current_catalog = catalog.duplicate()
+	#complete_catalog = catalog.duplicate()
 	order_catalog = catalog.duplicate()
 	emit_signal("usable_catalog", order_catalog)
 	#print(complete_catalog)

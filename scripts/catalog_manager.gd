@@ -34,6 +34,7 @@ var page := 0
 func _ready() -> void:
 	_add_page_inner(page)
 	#emit_signal("catalog_items", current_catalog)
+	emit_signal("catalog_items", current_catalog)
 
 func add_next_page() -> void:
 	# Check if there are any more pages
@@ -44,6 +45,7 @@ func add_next_page() -> void:
 	page += 1
 	_add_page_inner(page)
 	#emit_signal("catalog_items", current_catalog)
+	emit_signal("catalog_items", current_catalog)
 
 func _add_page_inner(page_number: int) -> void:
 	# Should be Array[Item], typing system can't handle that
@@ -56,4 +58,5 @@ func _add_page_inner(page_number: int) -> void:
 		var new_catalog_item_view = CATALOG_ITEM_SCENE.instantiate().with_data(converted_item)
 		catalog_view.add_child(new_catalog_item_view)
 		
-	emit_signal("catalog_items", current_catalog)
+	#emit_signal("catalog_items", current_catalog)
+	#emit_signal("catalog_items", current_catalog)

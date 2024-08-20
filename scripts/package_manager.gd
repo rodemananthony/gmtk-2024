@@ -4,6 +4,7 @@ extends Node2D
 
 
 var drop_zones : Array = []
+var drop_zone
 var current_catalog : Array = []
 var complete_catalog : Array = []
 var catalog_check : Array = []
