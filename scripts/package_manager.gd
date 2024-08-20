@@ -64,6 +64,6 @@ func _on_order_spawner_package_info(package_info: Package, ui_position: Vector2,
 
 
 func _on_order_spawner_catalog_to_choose_from(package_catalog: Array) -> void:
-	catalog_check = package_catalog.duplicate()
+	catalog_check = package_catalog
 	'''for x in len(catalog_check):
 		print(catalog_check[x].get("item").get("name"))'''

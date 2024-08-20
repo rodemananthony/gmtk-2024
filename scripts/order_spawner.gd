@@ -52,15 +52,30 @@ func spawn_order():
 			order_weight_label.set("text", item_weight)
 			#print(order_label)
 			
-			new_order.set_position(order_positions[0])
-			order_positions.remove_at(0)
-			add_child(new_order)
+			if order_positions.is_empty() == false :
+				new_order.set_position(order_positions[0])
+				order_positions.remove_at(0)
+				add_child(new_order)
 
 
 func _on_order_spawner_usable_catalog(current_catalog: Array) -> void:
-	usable_catalog = current_catalog.duplicate()
+	if len(current_catalog) == 3:	
+		usable_catalog.append(current_catalog[0])
+		usable_catalog.append(current_catalog[1])
+		usable_catalog.append(current_catalog[2])
+	elif len(current_catalog) == 6:
+		usable_catalog.append(current_catalog[3])
+		usable_catalog.append(current_catalog[4])
+		usable_catalog.append(current_catalog[5])
+	elif len(current_catalog) == 10:
+		usable_catalog.append(current_catalog[6])
+		usable_catalog.append(current_catalog[7])
+		usable_catalog.append(current_catalog[8])
+		usable_catalog.append(current_catalog[9])
+
 	complete_catalog = current_catalog.duplicate()
-	#print(usable_catalog)
+	for x in len(usable_catalog):
+		print(usable_catalog[x].get("item").get("name"))
 
 
 

@@ -24,6 +24,8 @@ const CATALOG_ITEM_SCENE: PackedScene = preload("res://scenes/main/catalog_item.
 
 var current_catalog: Array[ProgressItem] = []
 
+var test_catalog: Array[ProgressItem] = []
+
 var page := 0
 
 
@@ -31,7 +33,7 @@ var page := 0
 
 func _ready() -> void:
 	_add_page_inner(page)
-	emit_signal("catalog_items", current_catalog)
+	#emit_signal("catalog_items", current_catalog)
 
 func add_next_page() -> void:
 	# Check if there are any more pages
@@ -41,12 +43,11 @@ func add_next_page() -> void:
 	
 	page += 1
 	_add_page_inner(page)
-	emit_signal("catalog_items", current_catalog)
+	#emit_signal("catalog_items", current_catalog)
 
 func _add_page_inner(page_number: int) -> void:
 	# Should be Array[Item], typing system can't handle that
 	var page_to_add: Array = CATALOG_PAGES.get(page_number, [])
-	
 	for item in page_to_add:
 		var converted_item := ProgressItem.new(item)
 		
@@ -54,3 +55,5 @@ func _add_page_inner(page_number: int) -> void:
 		
 		var new_catalog_item_view = CATALOG_ITEM_SCENE.instantiate().with_data(converted_item)
 		catalog_view.add_child(new_catalog_item_view)
+		
+	emit_signal("catalog_items", current_catalog)

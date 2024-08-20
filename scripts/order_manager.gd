@@ -24,7 +24,15 @@ func _process(delta: float) -> void:
 	pass
 
 func add_correct_order(package:Package, ui_position:Vector2, ui_weight:float):
-	correct_orders += 1
+	if correct_orders < 8:
+		correct_orders += 1
+	if correct_orders == 3:
+		%"Catalog Manager".add_next_page()
+		correct_orders +=1
+	elif correct_orders == 7:
+		%"Catalog Manager".add_next_page()
+		correct_orders +=1
+	
 	order_score += 1
 	#print(ui_position)
 	emit_signal("display_score", order_score)
@@ -44,7 +52,7 @@ func _on_catalog_manager_catalog_items(catalog: Array) -> void:
 	current_catalog = catalog.duplicate()
 	order_catalog = catalog.duplicate()
 	emit_signal("usable_catalog", order_catalog)
-	#print(current_catalog)
+	#print(complete_catalog)
 
 
 func _on_collision_shape_2d_package_catalog(array: Array) -> void:

@@ -43,6 +43,30 @@ position = Vector2(583, 170)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Zone"]
 shape = SubResource("CircleShape2D_veel5")
 
+[node name="Drop Zone3" parent="." instance=ExtResource("4_fnyxk")]
+position = Vector2(583, 325)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Zone3"]
+shape = SubResource("CircleShape2D_veel5")
+
+[node name="Drop Zone4" parent="." instance=ExtResource("4_fnyxk")]
+position = Vector2(778, 325)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Zone4"]
+shape = SubResource("CircleShape2D_veel5")
+
+[node name="Drop Zone5" parent="." instance=ExtResource("4_fnyxk")]
+position = Vector2(397, 325)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Zone5"]
+shape = SubResource("CircleShape2D_veel5")
+
+[node name="Drop Zone6" parent="." instance=ExtResource("4_fnyxk")]
+position = Vector2(397, 170)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Zone6"]
+shape = SubResource("CircleShape2D_veel5")
+
 [node name="Drop Zone2" parent="." instance=ExtResource("4_fnyxk")]
 position = Vector2(778, 163)
 
