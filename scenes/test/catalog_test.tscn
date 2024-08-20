@@ -72,5 +72,6 @@ shape = SubResource("CircleShape2D_lqg1a")
 [connection signal="catalog_items" from="Catalog Manager" to="package_spawner" method="_on_catalog_manager_catalog_items"]
 [connection signal="catalog_items" from="Catalog Manager" to="order_spawner" method="_on_catalog_manager_catalog_items"]
 [connection signal="package_captured" from="Sprite2D/Drop Zone5" to="Sprite2D" method="_on_drop_zone_5_package_captured"]
+[connection signal="catalog_to_choose_from" from="order_spawner" to="package_spawner" method="_on_order_spawner_catalog_to_choose_from"]
 [connection signal="display_score" from="order_spawner" to="score_counter" method="_on_order_spawner_display_score"]
 [connection signal="package_info" from="order_spawner" to="package_spawner" method="_on_order_spawner_package_info"]
