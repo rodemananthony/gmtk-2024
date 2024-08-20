@@ -15,9 +15,10 @@ shape = SubResource("RectangleShape2D_2bj1w")
 script = ExtResource("1_q8yj8")
 
 [node name="Timer" type="Timer" parent="CollisionShape2D"]
-wait_time = 5.0
+wait_time = 3.0
 autostart = true
 
 [connection signal="package_info" from="." to="CollisionShape2D" method="_on_order_spawner_package_info"]
 [connection signal="usable_catalog" from="." to="CollisionShape2D" method="_on_order_spawner_usable_catalog"]
+[connection signal="package_catalog" from="CollisionShape2D" to="." method="_on_collision_shape_2d_package_catalog"]
 [connection signal="timeout" from="CollisionShape2D/Timer" to="CollisionShape2D" method="_on_timer_timeout"]

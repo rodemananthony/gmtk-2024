@@ -6,6 +6,7 @@ extends Node2D
 var drop_zones : Array = []
 var current_catalog : Array = []
 var complete_catalog : Array = []
+var catalog_check : Array = []
 
 func _ready() -> void:
 	for x in len(get_parent().get_children()):
@@ -15,15 +16,15 @@ func _ready() -> void:
 	#print(drop_zones)
 
 func _on_timer_timeout() -> void:
-	var catalog_length = len(current_catalog)
+	var catalog_length = len(catalog_check)
 	##print(catalog_length)
 	var current_item = null
 	var item = randi_range(0,catalog_length-1)
 	
 	for x in catalog_length:
 		if x == item:
-			current_item = current_catalog[x]
-			current_catalog.remove_at(x)
+			current_item = catalog_check[x]
+			catalog_check.remove_at(x)
 			#print(current_catalog)
 			#print(complete_catalog)
 	
@@ -60,3 +61,9 @@ func _on_order_spawner_package_info(package_info: Package, ui_position: Vector2,
 	for x in catalog_length:
 		if complete_catalog[x].get("item").get("name") == package_name:
 			current_catalog.append(complete_catalog[x])
+
+
+func _on_order_spawner_catalog_to_choose_from(package_catalog: Array) -> void:
+	catalog_check = package_catalog.duplicate()
+	'''for x in len(catalog_check):
+		print(catalog_check[x].get("item").get("name"))'''

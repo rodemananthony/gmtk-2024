@@ -10,9 +10,22 @@ var order_positions : Array = [order_position_one, order_position_two, order_pos
 
 var usable_catalog : Array = []
 var complete_catalog : Array = []
+var catalog_for_packages : Array = []
+
+var orders_in_scene : int = 0
+
+signal package_catalog (array:Array)
+
+func _ready() -> void:
+	if orders_in_scene < 2:
+		spawn_order()
 
 func _on_timer_timeout() -> void:
+	spawn_order()
 	
+
+
+func spawn_order():
 	var catalog_length = len(usable_catalog)
 	##print(catalog_length)
 	var current_item = null
@@ -21,6 +34,8 @@ func _on_timer_timeout() -> void:
 	for x in catalog_length:
 		if x == item:
 			current_item = usable_catalog[x]
+			catalog_for_packages.append(usable_catalog[x])
+			emit_signal("package_catalog", catalog_for_packages)
 			usable_catalog.remove_at(x)
 			
 			var item_info = current_item.get("item")

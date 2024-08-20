@@ -5,12 +5,14 @@ signal usable_catalog (current_catalog:Array)
 var current_catalog : Array = []
 var complete_catalog : Array = []
 var order_catalog : Array = []
+var package_catalog : Array = []
 
 var correct_orders : int = 0
 var order_score : int = 0
 
 signal display_score (score:int)
 signal package_info (package_info:Package, ui_position:Vector2, ui_weight:float)
+signal catalog_to_choose_from (package_catalog : Array)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -43,3 +45,8 @@ func _on_catalog_manager_catalog_items(catalog: Array) -> void:
 	order_catalog = catalog.duplicate()
 	emit_signal("usable_catalog", order_catalog)
 	#print(current_catalog)
+
+
+func _on_collision_shape_2d_package_catalog(array: Array) -> void:
+	package_catalog = array.duplicate()
+	emit_signal("catalog_to_choose_from", package_catalog)
