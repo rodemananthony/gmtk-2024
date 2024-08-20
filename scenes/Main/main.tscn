@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bk0js8v3gucjc"]
 
-[ext_resource type="PackedScene" uid="uid://cqdlrf3yxqqxe" path="res://scenes/main/order_view.tscn" id="1_1t2ka"]
 [ext_resource type="PackedScene" uid="uid://bbtes5hegqpon" path="res://scenes/main/package_bay.tscn" id="2_m0fga"]
+[ext_resource type="PackedScene" uid="uid://bm3qahuiyqa2n" path="res://scenes/main/orders_view.tscn" id="2_uyikq"]
 [ext_resource type="PackedScene" uid="uid://dnq2b2n763kot" path="res://scenes/main/catalog.tscn" id="3_thx5f"]
 [ext_resource type="PackedScene" uid="uid://caev248wf8syf" path="res://scenes/main/weigh_station.tscn" id="4_l46aa"]
 [ext_resource type="PackedScene" uid="uid://m46hdp4k1lj" path="res://scenes/main/game_manager.tscn" id="5_eoty8"]
@@ -9,30 +9,36 @@
 [ext_resource type="PackedScene" uid="uid://b37i8ur6wdpr2" path="res://scenes/main/catalog_manager.tscn" id="7_22og6"]
 [ext_resource type="PackedScene" uid="uid://d2djly0crknho" path="res://scenes/main/package_manager.tscn" id="8_klat7"]
 
-[node name="Main" type="Control"]
-layout_mode = 3
+[node name="Main" type="Node"]
+
+[node name="GridContainer" type="GridContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
 
-[node name="Order View" parent="." instance=ExtResource("1_1t2ka")]
-layout_mode = 1
+[node name="Package Bay" parent="GridContainer" instance=ExtResource("2_m0fga")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="Package Bay" parent="." instance=ExtResource("2_m0fga")]
-layout_mode = 1
+[node name="Orders View" parent="GridContainer" instance=ExtResource("2_uyikq")]
+layout_mode = 2
 
-[node name="Catalog" parent="." instance=ExtResource("3_thx5f")]
+[node name="Weigh Station" parent="GridContainer" instance=ExtResource("4_l46aa")]
+layout_mode = 2
+size_flags_stretch_ratio = 2.0
+
+[node name="Catalog" parent="GridContainer" instance=ExtResource("3_thx5f")]
 unique_name_in_owner = true
-layout_mode = 1
-
-[node name="Weigh Station" parent="." instance=ExtResource("4_l46aa")]
-layout_mode = 1
-offset_left = -1.0
-offset_top = -1.0
-offset_right = -1.0
-offset_bottom = -1.0
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
 
 [node name="Game Manager" parent="." instance=ExtResource("5_eoty8")]
 
@@ -41,3 +47,6 @@ offset_bottom = -1.0
 [node name="Catalog Manager" parent="Game Manager" instance=ExtResource("7_22og6")]
 
 [node name="Package Manager" parent="Game Manager" instance=ExtResource("8_klat7")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0

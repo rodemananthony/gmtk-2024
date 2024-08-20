@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://26ygtfxh0aav"]
+
+[node name="Layout Test" type="GridContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+
+[node name="bay" type="GridContainer" parent="."]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.51
+columns = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.04
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="."]
+visible = false
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="."]
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer2"]
+layout_mode = 2
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+layout_mode = 2
+editor_only = false
+
+[node name="ReferenceRect2" type="ReferenceRect" parent="."]
+layout_mode = 2
+editor_only = false
+
+[node name="ReferenceRect3" type="ReferenceRect" parent="."]
+layout_mode = 2
+editor_only = false
+
+[node name="ReferenceRect4" type="ReferenceRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+editor_only = false

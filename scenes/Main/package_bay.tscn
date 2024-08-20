@@ -1,9 +1,94 @@
-[gd_scene format=3 uid="uid://bbtes5hegqpon"]
+[gd_scene load_steps=3 format=3 uid="uid://bbtes5hegqpon"]
 
-[node name="Package Bay" type="Control"]
-layout_mode = 3
+[ext_resource type="PackedScene" uid="uid://07hlht8wa1c5" path="res://scenes/main/bay_slot.tscn" id="1_jvccq"]
+
+[sub_resource type="Theme" id="Theme_obql1"]
+
+[node name="Package Bay" type="AspectRatioContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 2
+theme = SubResource("Theme_obql1")
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
+
+[node name="Bay Slot" parent="GridContainer" instance=ExtResource("1_jvccq")]
+layout_mode = 2
+
+[node name="Bay Slot2" parent="GridContainer" instance=ExtResource("1_jvccq")]
+layout_mode = 2
+
+[node name="Bay Slot3" parent="GridContainer" instance=ExtResource("1_jvccq")]
+layout_mode = 2
+
+[node name="Bay Slot4" parent="GridContainer" instance=ExtResource("1_jvccq")]
+layout_mode = 2
+
+[node name="Bay Slot5" parent="GridContainer" instance=ExtResource("1_jvccq")]
+layout_mode = 2
+
+[node name="Bay Slot6" parent="GridContainer" instance=ExtResource("1_jvccq")]
+layout_mode = 2
+
+[node name="Bay Slot7" parent="GridContainer" instance=ExtResource("1_jvccq")]
+layout_mode = 2
+
+[node name="Bay Slot8" parent="GridContainer" instance=ExtResource("1_jvccq")]
+layout_mode = 2
+
+[node name="Bay Slot9" parent="GridContainer" instance=ExtResource("1_jvccq")]
+layout_mode = 2
+
+[node name="Bay Slot10" parent="GridContainer" instance=ExtResource("1_jvccq")]
+layout_mode = 2
+
+[node name="Bay Slot11" parent="GridContainer" instance=ExtResource("1_jvccq")]
+layout_mode = 2
+
+[node name="Bay Slot12" parent="GridContainer" instance=ExtResource("1_jvccq")]
+layout_mode = 2
+
+[node name="Bay Slot13" parent="GridContainer" instance=ExtResource("1_jvccq")]
+layout_mode = 2
+
+[node name="Bay Slot14" parent="GridContainer" instance=ExtResource("1_jvccq")]
+layout_mode = 2
+
+[node name="Bay Slot15" parent="GridContainer" instance=ExtResource("1_jvccq")]
+layout_mode = 2
+
+[node name="Bay Slot16" parent="GridContainer" instance=ExtResource("1_jvccq")]
+layout_mode = 2
+
+[node name="Bay Slot17" parent="GridContainer" instance=ExtResource("1_jvccq")]
+layout_mode = 2
+
+[node name="Bay Slot18" parent="GridContainer" instance=ExtResource("1_jvccq")]
+layout_mode = 2
+
+[node name="Bay Slot19" parent="GridContainer" instance=ExtResource("1_jvccq")]
+layout_mode = 2
+
+[node name="Bay Slot20" parent="GridContainer" instance=ExtResource("1_jvccq")]
+layout_mode = 2
+
+[node name="Bay Slot21" parent="GridContainer" instance=ExtResource("1_jvccq")]
+layout_mode = 2
+
+[node name="Bay Slot22" parent="GridContainer" instance=ExtResource("1_jvccq")]
+layout_mode = 2
+
+[node name="Bay Slot23" parent="GridContainer" instance=ExtResource("1_jvccq")]
+layout_mode = 2
+
+[node name="Bay Slot24" parent="GridContainer" instance=ExtResource("1_jvccq")]
+layout_mode = 2
+
+[node name="Bay Slot25" parent="GridContainer" instance=ExtResource("1_jvccq")]
+layout_mode = 2
