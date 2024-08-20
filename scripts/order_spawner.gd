@@ -20,6 +20,8 @@ func _ready() -> void:
 	if orders_in_scene < 2:
 		spawn_order()
 
+	#spawn_order()
+	#spawn_order()
 func _on_timer_timeout() -> void:
 	spawn_order()
 	
@@ -35,8 +37,8 @@ func spawn_order():
 		if x == item:
 			current_item = usable_catalog[x]
 			catalog_for_packages.append(usable_catalog[x])
-			emit_signal("package_catalog", catalog_for_packages)
 			usable_catalog.remove_at(x)
+			emit_signal("package_catalog", catalog_for_packages)
 			
 			var item_info = current_item.get("item")
 			var item_name = item_info.get("name")
@@ -74,6 +76,7 @@ func _on_order_spawner_usable_catalog(current_catalog: Array) -> void:
 		usable_catalog.append(current_catalog[9])
 
 	complete_catalog = current_catalog.duplicate()
+
 	for x in len(usable_catalog):
 		print(usable_catalog[x].get("item").get("name"))
 
