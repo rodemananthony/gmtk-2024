@@ -37,8 +37,10 @@ func spawn_order():
 		if x == item:
 			current_item = usable_catalog[x]
 			catalog_for_packages.append(usable_catalog[x])
-			usable_catalog.remove_at(x)
+			'''for y in len(catalog_for_packages):
+				print(catalog_for_packages[y].get("item").get("name"))'''
 			emit_signal("package_catalog", catalog_for_packages)
+			usable_catalog.remove_at(x)
 			
 			var item_info = current_item.get("item")
 			var item_name = item_info.get("name")
@@ -61,24 +63,12 @@ func spawn_order():
 
 
 func _on_order_spawner_usable_catalog(current_catalog: Array) -> void:
-	if len(current_catalog) == 3:	
-		usable_catalog.append(current_catalog[0])
-		usable_catalog.append(current_catalog[1])
-		usable_catalog.append(current_catalog[2])
-	elif len(current_catalog) == 6:
-		usable_catalog.append(current_catalog[3])
-		usable_catalog.append(current_catalog[4])
-		usable_catalog.append(current_catalog[5])
-	elif len(current_catalog) == 10:
-		usable_catalog.append(current_catalog[6])
-		usable_catalog.append(current_catalog[7])
-		usable_catalog.append(current_catalog[8])
-		usable_catalog.append(current_catalog[9])
 
+	usable_catalog = current_catalog.duplicate()
 	complete_catalog = current_catalog.duplicate()
 
-	for x in len(usable_catalog):
-		print(usable_catalog[x].get("item").get("name"))
+	'''for x in len(complete_catalog):
+		print(complete_catalog[x].get("item").get("name"))'''
 
 
 

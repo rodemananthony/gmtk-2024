@@ -53,8 +53,9 @@ func _on_timer_timeout() -> void:
 
 
 func _on_catalog_manager_catalog_items(catalog: Array) -> void:
-	complete_catalog = catalog.duplicate()
-	current_catalog = catalog.duplicate()
+	pass
+	#complete_catalog = catalog.duplicate()
+	#current_catalog = catalog.duplicate()
 	#print(current_catalog)
 
 

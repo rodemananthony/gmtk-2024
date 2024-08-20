@@ -49,10 +49,23 @@ func add_wrong_order(package:Package, ui_position:Vector2, ui_weight: float):
 	#print("Order Score: ",order_score)
 
 func _on_catalog_manager_catalog_items(catalog: Array) -> void:
-	complete_catalog = catalog.duplicate()
-	current_catalog = catalog.duplicate()
 	#complete_catalog = catalog.duplicate()
-	order_catalog = catalog.duplicate()
+	#current_catalog = catalog.duplicate()
+	#order_catalog = catalog.duplicate()
+	complete_catalog = catalog.duplicate()
+	if len(catalog) == 3:	
+		order_catalog.append(catalog[0])
+		order_catalog.append(catalog[1])
+		order_catalog.append(catalog[2])
+	elif len(catalog) == 6:
+		order_catalog.append(catalog[3])
+		order_catalog.append(catalog[4])
+		order_catalog.append(catalog[5])
+	elif len(catalog) == 10:
+		order_catalog.append(catalog[6])
+		order_catalog.append(catalog[7])
+		order_catalog.append(catalog[8])
+		order_catalog.append(catalog[9])
 	emit_signal("usable_catalog", order_catalog)
 	#print(complete_catalog)
 
