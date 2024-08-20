@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://bbetjodb22cey"]
+[gd_scene load_steps=14 format=3 uid="uid://bbetjodb22cey"]
 
 [ext_resource type="PackedScene" uid="uid://b37i8ur6wdpr2" path="res://scenes/Main/catalog_manager.tscn" id="1_qay8a"]
+[ext_resource type="Script" path="res://scripts/catalog_test.gd" id="1_st85p"]
 [ext_resource type="PackedScene" uid="uid://dnq2b2n763kot" path="res://scenes/Main/catalog.tscn" id="2_ni8lp"]
 [ext_resource type="PackedScene" uid="uid://beoj7bs2avqsf" path="res://scenes/Main/package_spawner.tscn" id="3_yutxk"]
 [ext_resource type="PackedScene" uid="uid://dyo41ud1e4ueu" path="res://scenes/Main/drop_zone.tscn" id="4_fnyxk"]
@@ -19,6 +20,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_lqg1a"]
 
 [node name="catalog_test" type="Node2D"]
+script = ExtResource("1_st85p")
 
 [node name="Catalog Manager" parent="." instance=ExtResource("1_qay8a")]
 unique_name_in_owner = true

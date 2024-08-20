@@ -26,22 +26,12 @@ var current_catalog: Array[ProgressItem] = []
 
 var page := 0
 
-var correct_orders = 0
-var wrong_orders = 0
 
 @onready var catalog_view: Control = %Catalog
 
 func _ready() -> void:
 	_add_page_inner(page)
 	emit_signal("catalog_items", current_catalog)
-
-func add_correct_order():
-	correct_orders += 1
-	print(correct_orders)
-
-func add_wrong_order():
-	wrong_orders += 1
-	print(wrong_orders)
 
 func add_next_page() -> void:
 	# Check if there are any more pages
