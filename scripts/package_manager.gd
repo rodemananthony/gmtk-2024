@@ -34,3 +34,12 @@ func _on_catalog_manager_catalog_items(catalog: Array) -> void:
 	complete_catalog = catalog.duplicate()
 	current_catalog = catalog.duplicate()
 	#print(current_catalog)
+
+
+func _on_order_spawner_package_info(package_info: Package, ui_position: Vector2, ui_weight: float) -> void:
+	var package_name = package_info.contents.name
+	
+	var catalog_length = len(complete_catalog)
+	for x in catalog_length:
+		if complete_catalog[x].get("item").get("name") == package_name:
+			current_catalog.append(complete_catalog[x])

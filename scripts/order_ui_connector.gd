@@ -11,28 +11,21 @@ func _ready() -> void:
 		#print(weight_needed)
 
 
-# poor attempt at making a score counter
-'''func add_correct_order():
-	correct_orders += 1
-	print(game_manager.correct_orders)'''
-
-'''func add_wrong_order():
-	wrong_orders = 1
-	print(game_manager.wrong_orders)'''
-
-
 func _on_drop_zone_package_captured(package: Package) -> void:
 	if package != null:
 		var package_weight = package.contents.weight
 		
 		if package_weight == weight_needed:
-			#add_correct_order()
-			print("right order")
+			var order_manager = get_parent().get_parent()
+			order_manager.add_correct_order(package, self.position, weight_needed)
+			#print(order_manager)
+			#print("right order")
 			package.queue_free()
 			
 		elif package_weight != weight_needed:
-			#add_wrong_order()
-			print("wrong order")
+			var order_manager = get_parent().get_parent()
+			order_manager.add_wrong_order(package, self.position, weight_needed)
+			#print("wrong order")
 			package.queue_free()
 		#print(package_weight)
 		

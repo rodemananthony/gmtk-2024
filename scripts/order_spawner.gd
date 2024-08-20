@@ -46,3 +46,29 @@ func _on_order_spawner_usable_catalog(current_catalog: Array) -> void:
 	usable_catalog = current_catalog.duplicate()
 	complete_catalog = current_catalog.duplicate()
 	#print(usable_catalog)
+
+
+
+func _on_order_spawner_package_info(package_info: Package, ui_position: Vector2, ui_weight: float) -> void:
+	var package_name = package_info.contents.name
+	var ui_position_y = ui_position.y
+	
+	var catalog_length = len(complete_catalog)
+	for x in catalog_length:
+		if complete_catalog[x].get("item").get("weight") == ui_weight:
+			usable_catalog.append(complete_catalog[x])
+			
+	if ui_position_y == order_position_one.y:
+		order_positions.insert(0, order_position_one)
+	elif ui_position_y == order_position_two.y:
+		order_positions.insert(0, order_position_two)
+	elif ui_position_y == order_position_three.y:
+		order_positions.insert(0, order_position_three)
+	elif ui_position_y == order_position_four.y:
+		order_positions.insert(0, order_position_four)
+	elif ui_position_y == order_position_five.y:
+		order_positions.insert(0, order_position_five)
+	
+			#print(complete_catalog[x].get("item").get("name"))
+	#print(test_one)
+	#print(test_two)

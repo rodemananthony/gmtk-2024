@@ -6,6 +6,12 @@ var current_catalog : Array = []
 var complete_catalog : Array = []
 var order_catalog : Array = []
 
+var correct_orders : int = 0
+var order_score : int = 0
+
+signal display_score (score:int)
+signal package_info (package_info:Package, ui_position:Vector2, ui_weight:float)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -15,6 +21,21 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func add_correct_order(package:Package, ui_position:Vector2, ui_weight:float):
+	correct_orders += 1
+	order_score += 1
+	#print(ui_position)
+	emit_signal("display_score", order_score)
+	emit_signal("package_info", package, ui_position, ui_weight)
+	#print("Order Score: ", order_score)
+
+func add_wrong_order(package:Package, ui_position:Vector2, ui_weight: float):
+	if order_score > 0:
+		order_score -= 1
+	#print(ui_position)
+	emit_signal("display_score", order_score)
+	emit_signal("package_info", package, ui_position, ui_weight)
+	#print("Order Score: ",order_score)
 
 func _on_catalog_manager_catalog_items(catalog: Array) -> void:
 	complete_catalog = catalog.duplicate()

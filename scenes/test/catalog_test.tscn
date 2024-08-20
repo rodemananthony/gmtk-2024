@@ -1,13 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://bbetjodb22cey"]
+[gd_scene load_steps=16 format=3 uid="uid://bbetjodb22cey"]
 
-[ext_resource type="PackedScene" uid="uid://b37i8ur6wdpr2" path="res://scenes/Main/catalog_manager.tscn" id="1_qay8a"]
+[ext_resource type="PackedScene" uid="uid://b37i8ur6wdpr2" path="res://scenes/main/catalog_manager.tscn" id="1_qay8a"]
 [ext_resource type="Script" path="res://scripts/catalog_test.gd" id="1_st85p"]
-[ext_resource type="PackedScene" uid="uid://dnq2b2n763kot" path="res://scenes/Main/catalog.tscn" id="2_ni8lp"]
-[ext_resource type="PackedScene" uid="uid://beoj7bs2avqsf" path="res://scenes/Main/package_spawner.tscn" id="3_yutxk"]
-[ext_resource type="PackedScene" uid="uid://dyo41ud1e4ueu" path="res://scenes/Main/drop_zone.tscn" id="4_fnyxk"]
+[ext_resource type="PackedScene" uid="uid://dnq2b2n763kot" path="res://scenes/main/catalog.tscn" id="2_ni8lp"]
+[ext_resource type="PackedScene" uid="uid://dvaw5vfjnj3jf" path="res://scenes/main/score_counter.tscn" id="3_rswq6"]
+[ext_resource type="PackedScene" uid="uid://beoj7bs2avqsf" path="res://scenes/main/package_spawner.tscn" id="3_yutxk"]
+[ext_resource type="PackedScene" uid="uid://dyo41ud1e4ueu" path="res://scenes/main/drop_zone.tscn" id="4_fnyxk"]
+[ext_resource type="Script" path="res://scenes/main/score_counter.gd" id="4_haxf1"]
 [ext_resource type="Texture2D" uid="uid://br2iik76llj5t" path="res://Images/Scale.png" id="5_7uq4q"]
 [ext_resource type="Script" path="res://scripts/scale_manager.gd" id="6_fyehm"]
-[ext_resource type="PackedScene" uid="uid://7h0xoltr88by" path="res://scenes/Main/order_spawner.tscn" id="7_rv2km"]
+[ext_resource type="PackedScene" uid="uid://7h0xoltr88by" path="res://scenes/main/order_spawner.tscn" id="7_rv2km"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_veel5"]
 
@@ -24,6 +26,11 @@ script = ExtResource("1_st85p")
 
 [node name="Catalog Manager" parent="." instance=ExtResource("1_qay8a")]
 unique_name_in_owner = true
+
+[node name="score_counter" parent="." instance=ExtResource("3_rswq6")]
+offset_top = 33.0
+offset_bottom = 33.0
+script = ExtResource("4_haxf1")
 
 [node name="Catalog" parent="." instance=ExtResource("2_ni8lp")]
 unique_name_in_owner = true
@@ -68,6 +75,7 @@ offset_left = -477.0
 offset_top = -567.0
 offset_right = -437.0
 offset_bottom = -544.0
+text = "Weight: 0"
 
 [node name="Drop Zone5" parent="Sprite2D" instance=ExtResource("4_fnyxk")]
 position = Vector2(0, -80)
@@ -80,3 +88,5 @@ shape = SubResource("CircleShape2D_lqg1a")
 [connection signal="catalog_items" from="Catalog Manager" to="package_spawner" method="_on_catalog_manager_catalog_items"]
 [connection signal="catalog_items" from="Catalog Manager" to="order_spawner" method="_on_catalog_manager_catalog_items"]
 [connection signal="package_captured" from="Sprite2D/Drop Zone5" to="Sprite2D" method="_on_drop_zone_5_package_captured"]
+[connection signal="display_score" from="order_spawner" to="score_counter" method="_on_order_spawner_display_score"]
+[connection signal="package_info" from="order_spawner" to="package_spawner" method="_on_order_spawner_package_info"]
